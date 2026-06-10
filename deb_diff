@@ -25,7 +25,7 @@ tail -n +2 "$CSV_FILE" | while IFS=',' read -r ID NAME REPO LANG; do
 
     mkdir -p "$OUTDIR"
 
-    # 🔥 IMPORTANT: run inside repo
+    # run inside repo
     (
         cd "$WORKDIR"
         debianize

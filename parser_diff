@@ -1,0 +1,47 @@
+
+
+#!/usr/bin/env bash 
+
+PROJECT="Rust"
+
+if [[ ! -d "logs" ]]; then
+    mkdir "logs"
+fi
+
+if [[ ! -d "$PROJECT" ]]; then
+    mkdir "$PROJECT"
+fi
+
+for package in "deb822-derive" "deb822-fast" "deb822-lossless" "debian-changelog" "debian-control" "debian-copyright" "debian-watch"; do
+    apt source "rust-$package"
+
+    rm -f *.debian.tar.xz *.dsc *.orig.tar.gz
+
+    srcdir=$(find . -maxdepth 1 -type d -name "rust-$package-*" | head -n1)
+
+    mv "$srcdir" "$package"
+
+    cd "$package" || exit 1
+
+    mv debian ..
+
+    rm -rf .git/ && git init && git add . && git commit -m "initial"
+
+    debianize 2>&1 | tee "../logs/debianize.$package.log"
+    cd ..
+
+    if [[ ! -d "$PROJECT/$package" ]]; then
+        mkdir "$PROJECT/$package"
+    fi
+
+    for file in "changelog" "control" "rules" "source/format" "upstream/metadata"; do
+        if [[ -f "debian/$file" ]]; then
+            diff -ur "debian/$file" "$package/debian/$file" > "$PROJECT/$package/$(echo $file | tr "/" ".").diff"
+        fi
+    done 
+
+
+    rm -rf "debian"
+    rm -rf "$package"
+
+done

@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+
+CSV_FILE="REPOS.csv"
+FILTER_ID="${1:-}"
+
+tail -n +2 "$CSV_FILE" | while IFS=',' read -r ID NAME REPO LANG; do
+
+    ID="$(echo "$ID" | xargs)"
+    NAME="$(echo "$NAME" | xargs)"
+    REPO="$(echo "$REPO" | xargs)"
+    LANG="$(echo "$LANG" | xargs)"
+
+    if [[ -n "$FILTER_ID" && "$ID" != "$FILTER_ID" ]]; then
+        continue
+    fi
+
+    echo "=== Processing [$ID] $NAME ==="
+
+    WORKDIR="${NAME}.debianize"
+    OUTDIR="${LANG}/${NAME}"
+
+    rm -rf "$WORKDIR"
+    git clone "$REPO" "$WORKDIR"
+    git remote add upstream "$REPO"
+
+    mkdir -p "$OUTDIR"
+
+    # 🔥 IMPORTANT: run inside repo
+    (
+        cd "$WORKDIR"
+        debianize
+    ) 2>&1 | tee "$OUTDIR/${NAME}.debianize.log"
+
+    debcheckout "$NAME" || true
+
+    # compare against debianized repo
+    for file in changelog control rules source/format upstream/metadata; do
+        SRC1="$WORKDIR/debian/$file"
+        SRC2="$NAME/debian/$file"
+
+        if [[ -f "$SRC1" && -f "$SRC2" ]]; then
+            diff -ur "$SRC1" "$SRC2" > "$OUTDIR/$(echo "$file" | tr "/" ".").diff" || true
+        fi
+    done
+
+    rm -rf "$WORKDIR" "$NAME"
+
+    [[ -n "$FILTER_ID" ]] && break
+
+done

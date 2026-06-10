@@ -1,0 +1,16 @@
+ID,NAME,REPO,LANG,DEB_NAME
+1,dulwich,https://github.com/jelmer/dulwich,Python
+2,pipx,https://github.com/pypa/pipx,Python
+3,mycli,https://github.com/dbcli/mycli,Python
+4,python-aiohttp,https://github.com/aio-libs/aiohttp,Python
+5,python-mitogen,https://github.com/mitogen-hq/mitogen,Python
+6,breezy,https://github.com/breezy-team/breezy,Python
+7,opkssh,https://github.com/openpubkey/opkssh,Golang
+8,torchwood,https://github.com/FiloSottile/torchwood,Golang
+9,prometheus-redis-exporter,https://github.com/oliver006/redis_exporter,Golang
+10,victoriametrics,https://github.com/VictoriaMetrics/VictoriaMetrics,Golang
+11,kmscon,https://github.com/kmscon/kmscon,C
+12,aethersdr,https://github.com/aethersdr/AetherSDR,C++
+13,rabbitmq-java-client,https://github.com/rabbitmq/rabbitmq-java-client,Java
+14,libxml2,https://gitlab.gnome.org/GNOME/libxml2,C
+15,libjson-validator-perl,https://github.com/jhthorsen/json-validator,Perl

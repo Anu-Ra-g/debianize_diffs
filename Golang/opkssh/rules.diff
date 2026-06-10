@@ -1,0 +1,35 @@
+--- opkssh.debianize/debian/rules	2026-06-10 14:47:13.819261652 +0530
++++ opkssh/debian/rules	2026-06-10 14:47:38.608923776 +0530
+@@ -1,3 +1,31 @@
+ #!/usr/bin/make -f
++
++include /usr/share/dpkg/pkg-info.mk # DEB_VERSION*
++
++export DH_GOLANG_INSTALL_EXTRA := \
++	commands/config/default-client-config.yml commands/mocks/etc-passwd
++
+ %:
+-	dh $@ --buildsystem=golang --builddirectory=_build
++	dh $@
++
++override_dh_auto_build:
++	dh_auto_build $(DH_BUILD_OPTS) -- \
++		-ldflags "-X main.Version="$(DEB_VERSION_UPSTREAM)
++
++SKIP="TestDetermineProvider/Good_path_with_env_vars_single_provider_and_no_default|TestDetermineProvider/Good_path_with_env_vars_many_providers_and_no_default|TestDetermineProvider/Good_path_remoteRedirectURI_set_\(no_default\)"
++override_dh_auto_test:
++	-dh_auto_test $(DH_BUILD_OPTS) -- -run $(SKIP)
++	dh_auto_test $(DH_BUILD_OPTS) -- -skip $(SKIP)
++
++B = $(CURDIR)/debian/tmp/usr/bin
++M = $(CURDIR)/debian/tmp/usr/share/man/man1
++
++ifeq (,$(filter nodoc,$(DEB_BUILD_PROFILES)))
++execute_before_dh_installman-arch:
++	mkdir -pv $(M)
++	help2man --no-info \
++		--version-string="$(DEB_VERSION)" \
++		--name="SSH with OpenPubkey" \
++		$(B)/opkssh \
++		-o $(M)/opkssh.1
++endif

@@ -1,0 +1,11 @@
+--- libxml2.debianize/debian/upstream/metadata	2026-06-10 15:13:19.494138978 +0530
++++ libxml2/debian/upstream/metadata	2026-06-10 15:13:32.690087124 +0530
+@@ -1,4 +1,4 @@
+----
+-Name: libxml2
+-Bug-Database: https://gitlab.gnome.org/
+-Repository-Browse: https://gitlab.gnome.org/GNOME/libxml2/-/issues
++Bug-Database: https://gitlab.gnome.org/gnome/libxml2/issues
++Bug-Submit: https://gitlab.gnome.org/gnome/libxml2/issues/new
++Repository: https://gitlab.gnome.org/gnome/libxml2.git
++Repository-Browse: https://gitlab.gnome.org/gnome/libxml2

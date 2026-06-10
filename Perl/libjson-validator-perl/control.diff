@@ -1,0 +1,63 @@
+--- libjson-validator-perl.debianize/debian/control	2026-06-10 15:13:52.818142204 +0530
++++ libjson-validator-perl/debian/control	2026-06-10 15:13:56.873087443 +0530
+@@ -1,11 +1,52 @@
+-Source: libjson-validator-perl.debianize
+-Maintainer: Anu-Ra-g <nayakanurag078@gmail.com>
++Source: libjson-validator-perl
++Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
++Uploaders: Lucas Kanashiro <kanashiro@debian.org>,
++           Nick Morrott <nickm@debian.org>,
++           Andrius Merkys <merkys@debian.org>
++Section: perl
++Testsuite: autopkgtest-pkg-perl
++Priority: optional
+ Build-Depends: debhelper-compat (= 13)
+-Standards-Version: 4.7.4.1
+-Vcs-Browser: https://github.com/jhthorsen/json-validator,branch=debian%2Fmain
+-Vcs-Git: https://github.com/jhthorsen/json-validator,branch=debian%2Fmain.git
++Build-Depends-Indep: libboolean-perl <!nocheck>,
++                     libcpanel-json-xs-perl <!nocheck>,
++                     libdata-validate-domain-perl <!nocheck>,
++                     libdata-validate-ip-perl <!nocheck>,
++                     libmojolicious-perl <!nocheck>,
++                     libnet-idn-encode-perl <!nocheck>,
++                     libscalar-list-utils-perl <!nocheck>,
++                     libsereal-encoder-perl <!nocheck>,
++                     libtest-deep-perl <!nocheck>,
++                     libtest-simple-perl <!nocheck>,
++                     libyaml-libyaml-perl (>= 0.80) <!nocheck>
++Standards-Version: 4.7.2
++Vcs-Browser: https://salsa.debian.org/perl-team/modules/packages/libjson-validator-perl
++Vcs-Git: https://salsa.debian.org/perl-team/modules/packages/libjson-validator-perl.git
++Homepage: https://metacpan.org/release/JSON-Validator
+ Rules-Requires-Root: no
+ 
+-Package: libjson-validator-perl.debianize
+-Architecture: any
+-Depends: ${misc:Depends}
++Package: libjson-validator-perl
++Architecture: all
++Depends: ${misc:Depends},
++         ${perl:Depends},
++         libmojolicious-perl,
++         libyaml-libyaml-perl
++Recommends: libcpanel-json-xs-perl,
++            libdata-validate-domain-perl,
++            libdata-validate-ip-perl,
++            libnet-idn-encode-perl,
++            libscalar-list-utils-perl,
++            libsereal-encoder-perl
++Breaks: libmojolicious-plugin-openapi-perl (<< 5.02),
++        sreview-web (<< 0.6.1-2)
++Replaces: sreview-web (<< 0.6.1-2)
++Description: module to validate data against a JSON schema
++ JSON::Validator is a class for validating data against JSON schemas. You
++ might want to use this instead of JSON::Schema if you need to validate data
++ against draft 4 of the JSON schema specification.
++ .
++ JSON::Validator can load JSON schemas in multiple formats: Plain perl data
++ structured or files on disk/web in the JSON/YAML format. The JSON parsing is
++ done using Mojo::JSON, while the YAML parsing is done with an optional
++ modules which need to be installed manually. JSON::Validator will look for
++ the YAML modules in this order: YAML::XS, YAML::Syck. The order is set by
++ which module that performs the best, so it might change in the future.

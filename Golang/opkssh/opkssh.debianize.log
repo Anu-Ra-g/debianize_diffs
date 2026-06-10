@@ -1,0 +1,215 @@
+No upstream repository specified, using upstream source in /home/anurag/WORKSPACE/debianize-CMP/opkssh.debianize/
+Switching to packaging branch debian/main.
+Using default unshare session
+Creating UpstreamBranchSource for enhanced upstream metadata handling
+Successfully created UpstreamBranchSource
+Using upstream version: 0.14.0
+Creating unshare session from cached Debian sid image
+Using cached Debian sid image from: /home/anurag/.cache/ognibuild/images/debian-sid-amd64.tar.gz
+Using cached Debian sid image
+Created upstream branch pointing to revision git-v1:193d79871f3bad3cd27cfb94734c265773a99c9b
+Created upstream tag: upstream/0.14.0
+Unable to map upstream requirement GoPackageDependency { package: "github.com/lestrrat-go/jwx/v3", version: Some("3.0.12") } (kind build) to a Debian package
+Unable to map upstream requirement GoPackageDependency { package: "github.com/testcontainers/testcontainers-go", version: Some("0.38.0") } (kind build) to a Debian package
+Unable to map upstream requirement GoPackageDependency { package: "github.com/thediveo/enumflag/v2", version: Some("2.0.7") } (kind build) to a Debian package
+Unable to map upstream requirement GoPackageDependency { package: "github.com/zitadel/oidc/v3", version: Some("3.41.0") } (kind build) to a Debian package
+Unable to map upstream requirement GoPackageDependency { package: "github.com/bmatcuk/doublestar/v4", version: Some("4.9.0") } (kind build) to a Debian package
+Unable to map upstream requirement GoPackageDependency { package: "github.com/cpuguy83/dockercfg", version: Some("0.3.2") } (kind build) to a Debian package
+Unable to map upstream requirement GoPackageDependency { package: "github.com/go-chi/chi/v5", version: Some("5.2.2") } (kind build) to a Debian package
+Unable to map upstream requirement GoPackageDependency { package: "github.com/go-jose/go-jose/v4", version: Some("4.0.5") } (kind build) to a Debian package
+Unable to map upstream requirement GoPackageDependency { package: "github.com/lestrrat-go/dsig-secp256k1", version: Some("1.0.0") } (kind build) to a Debian package
+Unable to map upstream requirement GoPackageDependency { package: "github.com/lestrrat-go/httprc/v3", version: Some("3.0.1") } (kind build) to a Debian package
+Unable to map upstream requirement GoPackageDependency { package: "github.com/lestrrat-go/option/v2", version: Some("2.0.0") } (kind build) to a Debian package
+Unable to map upstream requirement GoPackageDependency { package: "github.com/lufia/plan9stats", version: Some("0.0.0-20211012122336-39d0f177ccd0") } (kind build) to a Debian package
+Unable to map upstream requirement GoPackageDependency { package: "github.com/power-devops/perfstat", version: Some("0.0.0-20210106213030-5aafc221ea8c") } (kind build) to a Debian package
+Unable to map upstream requirement GoPackageDependency { package: "github.com/shirou/gopsutil/v4", version: Some("4.25.5") } (kind build) to a Debian package
+Unable to map upstream requirement GoPackageDependency { package: "github.com/yeqown/go-qrcode/v2", version: Some("2.2.5") } (kind build) to a Debian package
+Unable to map upstream requirement GoPackageDependency { package: "github.com/yeqown/reedsolomon", version: Some("1.0.0") } (kind build) to a Debian package
+Unable to map upstream requirement GoPackageDependency { package: "go.opentelemetry.io/auto/sdk", version: Some("1.1.0") } (kind build) to a Debian package
+Unable to map upstream requirement GoPackageDependency { package: "github.com/decred/dcrd/dcrec/secp256k1/v4", version: Some("4.4.0") } (kind build) to a Debian package
+Multiple candidates for dependency [DebianDependency("golang-golang-x-oauth2-dev"), DebianDependency("golang-golang-x-oauth2-google-dev")]
+Breaking tie between [["golang-golang-x-oauth2-dev", "golang-golang-x-oauth2-google-dev"]] to "golang-golang-x-oauth2-dev" based on build-depends count
+Unable to map upstream requirement GoPackageDependency { package: "gopkg.in/yaml.v3", version: Some("3.0.1") } (kind build) to a Debian package
+Using source package name: golang-github-openpubkey-opkssh
+No relevant WNPP bugs found for golang-github-openpubkey-opkssh
+No relevant WNPP bugs found for github.com/openpubkey/opkssh
+Writing initial changelog with source_name: golang-github-openpubkey-opkssh
+Running lintian fixers on debianized package
+Found 196 lintian fixers
+fixer; name="ancient-maintscript-entry"
+fixer; name="ancient-python-version-field"
+fixer; name="apache2-module-does-not-depend-on-apache2-api"
+fixer; name="autotools-pkg-config-macro-not-cross-compilation-safe"
+fixer; name="binary-control-field-duplicates-source"
+fixer; name="binary-package-depends-on-toolchain-package"
+fixer; name="bugs-field-does-not-refer-to-debian-infrastructure"
+fixer; name="build-depends-on-1-revision"
+fixer; name="build-depends-on-build-essential"
+fixer; name="build-depends-on-obsolete-package"
+fixer; name="build-depends-on-python-sphinx-only"
+fixer; name="built-using-for-golang"
+fixer; name="capitalization-error-in-description"
+fixer; name="changelog-has-duplicate-line"
+fixer; name="chown-with-dot"
+fixer; name="circular-installation-prerequisite"
+fixer; name="comma-separated-files-in-dep5-copyright"
+fixer; name="common-license"
+fixer; name="control-file-contains-dh_make-vcs-comment"
+fixer; name="control-file-with-CRLF-EOLs"
+fixer; name="copyright-continued-lines-with-space"
+fixer; name="copyright-format-uri"
+fixer; name="copyright-has-crs"
+fixer; name="copyright-missing-upstream-info"
+fixer; name="copyright-refers-to-old-directory"
+fixer; name="copyright-refers-to-symlink-license"
+fixer; name="debcargo-collapse-features"
+fixer; name="debhelper-but-no-misc-depends"
+assuming changelog does not need to be updated since it is the inaugural unreleased entry Specify --update-changelog to override.
+fixer; name="debhelper-compat-wrong-field"
+fixer; name="debhelper-tools-from-autotools-dev-are-deprecated"
+fixer; name="debian-changelog-file-contains-obsolete-user-emacs-settings"
+fixer; name="debian-changelog-has-wrong-day-of-week"
+fixer; name="debian-changelog-line-too-long"
+fixer; name="debian-control-has-empty-field"
+fixer; name="debian-control-has-obsolete-dbg-package"
+fixer; name="debian-control-has-unusual-field-spacing"
+fixer; name="debian-pycompat-is-obsolete"
+fixer; name="debian-pyversions-is-obsolete"
+fixer; name="debian-rules-contains-unnecessary-get-orig-source-target"
+fixer; name="debian-rules-missing-recommended-target"
+fixer; name="debian-rules-not-executable"
+fixer; name="debian-rules-parses-dpkg-parsechangelog"
+fixer; name="debian-rules-sets-dpkg-architecture-variable"
+fixer; name="debian-rules-should-not-use-pwd"
+fixer; name="debian-rules-uses-as-needed-linker-flag"
+fixer; name="debian-rules-uses-deb-build-opts"
+fixer; name="debian-rules-uses-deprecated-systemd-override"
+fixer; name="debian-rules-uses-special-shell-variable"
+fixer; name="debian-rules-uses-unnecessary-dh-argument"
+fixer; name="debian-source-options-has-custom-compression-settings"
+fixer; name="debian-tests-control-autodep8-is-obsolete"
+fixer; name="debian-upstream-obsolete-path"
+fixer; name="debian-watch-contains-dh_make-template"
+fixer; name="debian-watch-file-is-missing"
+fixer; name="debian-watch-file-old-format"
+fixer; name="debian-watch-file-uses-deprecated-githubredir"
+fixer; name="debian-watch-file-uses-github-releases"
+fixer; name="debian-watch-file-uses-old-github-pattern"
+fixer; name="debian-watch-not-mangling-version"
+fixer; name="debian-watch-use-templates"
+fixer; name="debian-watch-uses-insecure-uri"
+fixer; name="debug-symbol-migration-possibly-complete"
+fixer; name="declares-possibly-conflicting-debhelper-compat-versions"
+fixer; name="default-mta-dependency-not-listed-first"
+fixer; name="dep3-format-patch-author-or-from-is-better"
+fixer; name="dep5-file-paragraph-references-header-paragraph"
+fixer; name="depends-on-old-emacs"
+fixer; name="depends-on-python-minimal"
+fixer; name="description-contains-tabs"
+fixer; name="description-synopsis-starts-with-article"
+fixer; name="desktop-entry-contains-encoding-key"
+fixer; name="desktop-entry-file-has-crs"
+fixer; name="dh-clean-k-is-deprecated"
+fixer; name="dh-installmanpages-is-obsolete"
+fixer; name="dh-quilt-addon-but-quilt-source-format"
+fixer; name="dm-upload-allowed"
+fixer; name="dpatch-build-dep-but-no-patch-list"
+fixer; name="duplicate-contact"
+fixer; name="duplicate-override-context"
+fixer; name="empty-debian-patches-series"
+fixer; name="empty-debian-source-options"
+fixer; name="empty-debian-tests-control"
+fixer; name="essential-no-not-needed"
+fixer; name="excessive-priority-for-library-package"
+fixer; name="executable-desktop-file"
+fixer; name="extended-description-contains-empty-paragraph"
+fixer; name="field-name-typo-in-control"
+fixer; name="field-name-typo-in-dep5-copyright"
+fixer; name="field-name-typo-in-tests-control"
+fixer; name="field-name-typo-in-upstream-metadata"
+fixer; name="file-contains-trailing-whitespace"
+fixer; name="font-package-not-multi-arch-foreign"
+fixer; name="global-files-wildcard-not-first-paragraph-in-dep5-copyright"
+fixer; name="homepage-field-uses-insecure-uri"
+fixer; name="homepage-for-cpan-package-contains-version"
+fixer; name="homepage-in-binary-package"
+fixer; name="homepage-url-ends-with-dot-git"
+fixer; name="initial-upload-closes-no-bugs"
+No relevant WNPP bugs found for golang-github-openpubkey-opkssh
+fixer; name="invalid-dep3-format-patch-wrong-last-update"
+fixer; name="invalid-short-name-in-dep5-copyright"
+fixer; name="invalid-standards-version"
+fixer; name="libmodule-build-perl-needs-to-be-in-build-depends"
+fixer; name="libmodule-build-tiny-perl-needs-to-be-in-build-depends"
+fixer; name="license-file-listed-in-debian-copyright"
+fixer; name="maintainer-also-in-uploaders"
+fixer; name="maintainer-script-empty"
+fixer; name="maintainer-script-without-set-e"
+fixer; name="malformed-override"
+fixer; name="missing-build-dependency-for-dh_-command"
+fixer; name="missing-prerequisite-for-pyproject-backend"
+fixer; name="missing-static-built-using-field-for-golang-package"
+fixer; name="needlessly-depends-on-awk"
+fixer; name="new-package-uses-date-based-version-number"
+fixer; name="newer-debconf-templates"
+fixer; name="no-copyright-file"
+fixer; name="no-homepage-field"
+fixer; name="no-maintainer-field"
+fixer; name="no-priority-field"
+fixer; name="no-section-field"
+fixer; name="obsolete-field-in-dep5-copyright"
+fixer; name="obsolete-runtime-tests-restriction"
+fixer; name="obsolete-url-in-packaging"
+fixer; name="obsolete-vim-addon-manager"
+fixer; name="old-fsf-address-in-copyright-file"
+fixer; name="old-override-info-format"
+fixer; name="orphaned-package-should-not-have-uploaders"
+fixer; name="package-contains-linda-override"
+fixer; name="package-has-no-description"
+fixer; name="package-needs-versioned-debhelper-build-depends"
+fixer; name="package-relation-with-perl-modules"
+fixer; name="package-uses-deprecated-debhelper-compat-version"
+fixer; name="package-uses-deprecated-dpatch-patch-system"
+fixer; name="package-uses-deprecated-source-override-location"
+fixer; name="patch-file-present-but-not-mentioned-in-series"
+fixer; name="pkg-js-tools-test-is-missing"
+fixer; name="pkg-perl-testsuite"
+fixer; name="pkg-perl-vcs"
+fixer; name="possible-missing-colon-in-closes"
+fixer; name="priority-extra-is-replaced-by-priority-optional"
+fixer; name="pubkey"
+fixer; name="public-upstream-key-binary"
+fixer; name="public-upstream-key-in-native-package"
+fixer; name="public-upstream-key-not-minimal"
+fixer; name="public-upstream-keys-in-multiple-locations"
+fixer; name="python-teams-merged"
+fixer; name="quilt-series-but-no-build-dep"
+fixer; name="quilt-series-without-trailing-newline"
+fixer; name="redundant-control-relation"
+fixer; name="redundant-installation-prerequisite"
+fixer; name="redundant-priority-optional-field"
+fixer; name="renamed-tag"
+fixer; name="rules-not-executable"
+fixer; name="rules-requires-root-missing"
+fixer; name="skip-systemd-native-flag-missing-pre-depends"
+fixer; name="source-format"
+fixer; name="space-in-std-shortname-in-dep5-copyright"
+fixer; name="systemd-service-alias-without-extension"
+fixer; name="systemd-service-file-pidfile-refers-to-var-run"
+fixer; name="systemd-service-file-refers-to-obsolete-bindto"
+fixer; name="systemd-service-file-refers-to-obsolete-target"
+fixer; name="systemd-service-file-shutdown-problems"
+fixer; name="trailing-comma-in-maintainer-field"
+fixer; name="transitional-package-should-be-oldlibs-optional"
+fixer; name="typo-in-debhelper-override-target"
+fixer; name="unnecessary-team-upload"
+fixer; name="unnecessary-testsuite-autopkgtest-field"
+fixer; name="unused-build-dependency-on-cdbs"
+fixer; name="unused-entry-in-debian-source-include-binaries"
+fixer; name="unused-license-paragraph-in-dep5-copyright"
+fixer; name="unused-override"
+fixer; name="unversioned-copyright-format-uri"
+fixer; name="out-of-date-copyright-format-uri"
+fixer; name="upstream-metadata-file"
+Lintian fixers completed successfully
+Lintian fixers completed: 3 applied, 0 failed

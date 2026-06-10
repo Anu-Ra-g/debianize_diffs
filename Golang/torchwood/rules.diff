@@ -1,0 +1,27 @@
+--- torchwood.debianize/debian/rules	2026-06-10 14:51:10.389694947 +0530
++++ torchwood/debian/rules	2026-06-10 14:51:28.461355085 +0530
+@@ -1,3 +1,23 @@
+ #!/usr/bin/make -f
++
++export DH_GOLANG_INSTALL_EXTRA := \
++	$(wildcard cmd/age-keyserver/static/*) \
++	$(wildcard cmd/age-keyserver/templates/*) \
++	$(wildcard prefix/prefixsqlite/*.sql) \
++	cmd/age-keylookup/default_policy.txt \
++	cmd/age-keyserver/witness_policy.txt
++
+ %:
+-	dh $@ --buildsystem=golang --builddirectory=_build
++	dh $@ --builddirectory=debian/_build --buildsystem=golang
++
++execute_before_dh_auto_configure: # debian/README.source
++	mkdir -pv debian/_build/src/filippo.io/mostly-harmless/vrf-r255
++	cp -v $(CURDIR)/debian/local/vrf.go debian/_build/src/filippo.io/mostly-harmless/vrf-r255
++
++execute_before_dh_auto_install:
++	mv -v debian/_build/bin/spicy debian/_build/bin/spicy-torchwood
++
++# talks to Internet or fragile or infloops
++SKIP="TestReadEndpoint|TestSumDB|TestScript"
++override_dh_auto_test:
++	dh_auto_test $(DH_BUILD_OPTS) -- -timeout 50m -skip=$(SKIP)

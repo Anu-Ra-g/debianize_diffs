@@ -1,0 +1,138 @@
+--- libxml2.debianize/debian/rules	2026-06-10 15:12:58.989298673 +0530
++++ libxml2/debian/rules	2026-06-10 15:13:32.689567925 +0530
+@@ -1,3 +1,134 @@
+ #!/usr/bin/make -f
+-%:
++export DH_VERBOSE=1
++
++DOPACKAGES = $(shell dh_listpackages)
++
++ifneq (,$(filter python3-libxml2,$(DOPACKAGES)))
++# The versions of python3 currently supported
++PY3VERS=$(shell py3versions -s)
++else
++PY3VERS=
++endif
++
++export DEB_BUILD_MAINT_OPTIONS=hardening=+all
++export DEB_CFLAGS_MAINT_APPEND = -Wall -O3
++
++include /usr/share/dpkg/architecture.mk
++
++TARGETS := main $(PY3VERS)
++
++CONFIGURE_FLAGS := --with-history \
++		   --with-legacy \
++		   --with-ftp \
++		   --with-xptr-loc \
++		   --with-http \
++		   --with-lzma \
++		   --with-docs \
++
++override_dh_auto_configure-arch: $(TARGETS:%=doconfigure-%)
++
++override_dh_auto_configure-indep:
++	dh_auto_configure -- --with-docs --docdir \$${prefix}/share/doc/libxml2 --enable-rebuild-docs --with-python=no
++
++doconfigure-%:
++	export PYTHON=$(PYTHON) && dh_auto_configure --builddirectory=builddir/$(*) -- $(CONFIGURE_FLAGS) && unset PYTHON
++	touch $@
++
++ifeq (,$(filter noi18n,$(DEB_BUILD_PROFILES)))
++doconfigure-main: CONFIGURE_FLAGS += --with-python=no --enable-static
++else
++doconfigure-main: CONFIGURE_FLAGS += --with-python=no --enable-static
++endif
++doconfigure-python%: CONFIGURE_FLAGS += --with-python
++	#PYTHON_VERSION=$(subst python,,$(*))
++	PYTHON=$(shell which $(*))
++
++dobuild-%: BUILD_DIR=builddir/$(*)
++dobuild-%: doconfigure-%
++	$(if $(filter $(BUILD_DIR),builddir/$(*)),,[ -d $(BUILD_DIR) ] || mv builddir/$(*)/python $(BUILD_DIR))
++	dh_auto_build --builddirectory=$(BUILD_DIR) -- $(BUILD_FLAGS)
++
++dobuild-python%: BUILD_DIR=builddir/main/$(*)
++dobuild-python%: BUILD_FLAGS=libxml2mod_la_LIBADD='$$(mylibs)' \
++    PYTHON_INCLUDES='$(shell $(DEB_HOST_GNU_TYPE)-$(*)-config --includes)' \
++    PYTHON_LIBS='$(shell $(DEB_HOST_GNU_TYPE)-$(*)-config --ldflags)'
++dobuild-python%: dobuild-%
++
++override_dh_auto_build-arch: $(TARGETS:%=dobuild-%)
++
++override_dh_auto_build-indep:
++	dh_auto_build -i
++
++override_dh_auto_test-indep:
++	: Skipping tests during indep build
++
++execute_after_dh_auto_clean:
++	rm -rf builddir
++	rm -f doconfigure-*
++
++doinstall-main: dobuild-%
++	dh_auto_install --builddirectory=builddir/main
++
++override_dh_auto_install-arch: $(TARGETS:%=doinstall-%)
++	find debian/tmp -name *.la -delete
++ifneq ($(PY3VERS),)
++	rm -r debian/tmp/usr/lib/python*/site-packages/__pycache__
++	rm -f debian/tmp/usr/lib/python*/site-packages/*.a
++endif
++
++doinstall-python%: dobuild-python%
++	dh_auto_install --builddirectory=builddir/main/python$(*)
++
++override_dh_compress:
++	dh_compress -Xexamples/ -Xtutorial/ -Xhtml/ -X.html
++
++override_dh_installchangelogs:
++	dh_installchangelogs -k NEWS
++
++override_dh_install-arch:
++	dh_install -a
++	sed -i -e 's,/lib/$(DEB_HOST_MULTIARCH),/lib,' debian/libxml2-dev/usr/bin/xml2-config
++
++DEB_SVERSION    := $(shell dpkg-parsechangelog -S Version | sed 's/-.*//')
++BUILD_DATE := $(shell dpkg-parsechangelog | sed -n -e 's/^Date: //p')
++source_dir := $(shell basename $(CURDIR))
++source_files = $(addprefix $(source_dir)/, \
++                 $(filter-out stamps .pc .git .gitignore debian test result builddir doconfigure-% , $(wildcard *)))
++
++override_dh_install-indep:
++	dh_install -i
++
++	mkdir -p debian/libxml2-source/usr/src/libxml2
++	tar -C .. -c -f - $(source_files) | tar -C debian/libxml2-source/usr/src/libxml2 -x -f -
++	-make -C debian/libxml2-source/usr/src/libxml2/$(source_dir) distclean
++	rm -rvf debian/libxml2-source/usr/src/libxml2/$(source_dir)/autom4te.cache
++	rm -rvf debian/libxml2-source/usr/src/libxml2/$(source_dir)/codegen/__pycache__
++	cd debian/libxml2-source/usr/src/libxml2 \
++	  && find -depth -newermt '$(BUILD_DATE)' -print0 | \
++	     xargs -0r touch --no-dereference --date='$(BUILD_DATE)' \
++	  && find $(source_dir) -type f -print0 | LC_ALL=C sort -z | \
++	     tar -v --null -T - -c --xz --mode=go=rX,u+rw,a-s \
++		--owner=0 --group=0 --numeric-owner --sort=name \
++		--xform='s=^[^/]*\/=libxml2-$(DEB_SVERSION)/=' \
++		-f libxml2-$(DEB_SVERSION).tar.xz
++	rm -rf debian/libxml2-source/usr/src/libxml2/$(source_dir)
++
++override_dh_makeshlibs:
++	dh_makeshlibs -plibxml2-16 -V 'libxml2-16 (>= 2.14.2)' -- -c4
++	dh_makeshlibs --remaining-packages
++
++#  I need to specify all the targets (build, binary, clean, etc) as
++#  otherwise dh may invoke them in a order that is not appropriate for the
++#  build system (the -indep part is done in-tree because rebuilding the
++#  docs out of tree is not supported.  And once an in-tree build is done no
++#  out-of-tree builds can be done, so we wouldn't be able to do the -arch
++#  builds after the -indep one).
++clean build-arch binary-arch build-indep binary-indep:
+ 	dh $@
++
++build: build-arch build-indep
++binary: binary-arch binary-indep
++
++dfsg-source-tree:
++	rm -rf test/
++	rm -rf result/

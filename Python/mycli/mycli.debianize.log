@@ -1,0 +1,4 @@
+No upstream repository specified, using upstream source in /home/anurag/WORKSPACE/debianize-CMP/mycli.debianize/
+Switching to packaging branch debian/main.
+Using default unshare session
+Error getting upstream metadata: Other("error decoding response body")

@@ -1,0 +1,12 @@
+--- dulwich.debianize/debian/upstream/metadata	2026-06-10 14:27:43.352753020 +0530
++++ dulwich/debian/upstream/metadata	2026-06-10 14:27:51.853326946 +0530
+@@ -1,7 +1,5 @@
+----
+-Name: dulwich
+-Bug-Database: https://github.com/dulwich/dulwich/issues
+-Bug-Submit: https://github.com/dulwich/dulwich/issues/new
+ Repository: https://github.com/jelmer/dulwich.git
+ Repository-Browse: https://github.com/jelmer/dulwich
++Bug-Database: https://github.com/dulwich/dulwich/issues
++Bug-Submit: https://github.com/dulwich/dulwich/issues/new
+ Security-Contact: https://github.com/dulwich/dulwich/tree/HEAD/SECURITY.md

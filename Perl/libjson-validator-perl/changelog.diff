@@ -1,0 +1,567 @@
+--- libjson-validator-perl.debianize/debian/changelog	2026-06-10 15:13:46.394141443 +0530
++++ libjson-validator-perl/debian/changelog	2026-06-10 15:13:56.873087443 +0530
+@@ -1,5 +1,561 @@
+-libjson-validator-perl.debianize (5.19-1) UNRELEASED; urgency=low
++libjson-validator-perl (5.18-1) unstable; urgency=medium
+ 
+-  * Initial release.
++  * New upstream version 5.18
+ 
+- -- Anu-Ra-g <nayakanurag078@gmail.com>  Wed, 10 Jun 2026 15:13:46 +0530
++ -- Andrius Merkys <merkys@debian.org>  Tue, 09 Jun 2026 05:41:38 -0400
++
++libjson-validator-perl (5.15+dfsg1-1) unstable; urgency=medium
++
++  * New upstream version 5.15+dfsg1
++  * Cease to exclude the schema cache (Closes: #1091856)
++
++ -- Andrius Merkys <merkys@debian.org>  Mon, 02 Feb 2026 06:52:37 -0500
++
++libjson-validator-perl (5.15+dfsg-1) unstable; urgency=medium
++
++  * Team upload.
++  * debian/copyright: Files-Excluded: add CPAN distribution tarballs.
++  * Import upstream version 5.15+dfsg.
++  * Declare compliance with Debian Policy 4.7.2.
++
++ -- gregor herrmann <gregoa@debian.org>  Sat, 29 Mar 2025 21:05:05 +0100
++
++libjson-validator-perl (5.14+dfsg-2) unstable; urgency=medium
++
++  * Rebuild with openapi-specification 3.1.1.
++  * Simplify debian/rules.
++  * Update debian/copyright.
++
++ -- Andrius Merkys <merkys@debian.org>  Thu, 12 Dec 2024 03:35:33 -0500
++
++libjson-validator-perl (5.14+dfsg-1) unstable; urgency=medium
++
++  * Team upload.
++  * Import upstream version 5.14+dfsg.
++
++ -- gregor herrmann <gregoa@debian.org>  Mon, 06 Mar 2023 21:13:16 +0100
++
++libjson-validator-perl (5.13+dfsg-1) unstable; urgency=medium
++
++  * Team upload.
++  * Import upstream version 5.13+dfsg.
++  * Declare compliance with Debian Policy 4.6.2.
++
++ -- gregor herrmann <gregoa@debian.org>  Fri, 30 Dec 2022 21:24:21 +0100
++
++libjson-validator-perl (5.12+dfsg-1) unstable; urgency=medium
++
++  * Team upload.
++  * Import upstream version 5.12+dfsg.
++  * Update debian/upstream/metadata.
++
++ -- gregor herrmann <gregoa@debian.org>  Sun, 30 Oct 2022 21:08:06 +0100
++
++libjson-validator-perl (5.11+dfsg-1) unstable; urgency=medium
++
++  * Team upload.
++  * Import upstream version 5.11+dfsg.
++
++ -- gregor herrmann <gregoa@debian.org>  Fri, 02 Sep 2022 15:48:51 +0200
++
++libjson-validator-perl (5.10+dfsg-1) unstable; urgency=medium
++
++  * Team upload.
++  * Import upstream version 5.10+dfsg.
++  * Drop empty debian/patches/series.
++  * Declare compliance with Debian Policy 4.6.1.
++
++ -- gregor herrmann <gregoa@debian.org>  Fri, 19 Aug 2022 00:45:14 +0200
++
++libjson-validator-perl (5.08+dfsg-1) unstable; urgency=medium
++
++  * New upstream version 5.08+dfsg
++  * d/patches:
++    - Drop typo-in-manual-page (applied upstream)
++
++ -- Nick Morrott <nickm@debian.org>  Mon, 04 Apr 2022 13:44:45 +0100
++
++libjson-validator-perl (5.07+dfsg-1) unstable; urgency=medium
++
++  * New upstream version 5.07+dfsg
++  * d/copyright:
++    - Refresh Debian copyright
++    - Tweak tabs-to-spaces in Artistic-2.0 stanza
++  * d/patches:
++    - Add patch typo-in-manual-page
++  * d/t/p/smoke-skip:
++    - Skip additional openapiv2 test
++
++ -- Nick Morrott <nickm@debian.org>  Thu, 24 Mar 2022 05:13:22 +0000
++
++libjson-validator-perl (5.05+dfsg-1) unstable; urgency=medium
++
++  * Team upload.
++  * Import upstream version 5.05+dfsg.
++
++ -- gregor herrmann <gregoa@debian.org>  Sun, 09 Jan 2022 02:09:13 +0100
++
++libjson-validator-perl (5.04+dfsg-1) unstable; urgency=medium
++
++  * Team upload.
++  * Import upstream version 5.04+dfsg.
++
++ -- gregor herrmann <gregoa@debian.org>  Sun, 12 Dec 2021 16:31:08 +0100
++
++libjson-validator-perl (5.03+dfsg-1) unstable; urgency=medium
++
++  * Team upload.
++  * Import upstream version 5.03+dfsg.
++  * Bump versioned Breaks on libmojolicious-plugin-openapi-perl.
++
++ -- gregor herrmann <gregoa@debian.org>  Mon, 22 Nov 2021 19:32:31 +0100
++
++libjson-validator-perl (5.02+dfsg-1) unstable; urgency=medium
++
++  * Team upload.
++  * Import upstream version 5.02+dfsg.
++  * Add one more test to debian/tests/pkg-perl/smoke-skip.
++  * Mention some changes in debian/NEWS.
++  * Bump versioned Breaks on libmojolicious-plugin-openapi-perl.
++
++ -- gregor herrmann <gregoa@debian.org>  Sun, 14 Nov 2021 17:24:46 +0100
++
++libjson-validator-perl (4.25+dfsg-2) unstable; urgency=medium
++
++  * Team upload.
++  * Add Breaks on older libmojolicious-plugin-openapi-perl.
++
++ -- gregor herrmann <gregoa@debian.org>  Thu, 30 Sep 2021 13:32:07 +0200
++
++libjson-validator-perl (4.25+dfsg-1) unstable; urgency=medium
++
++  * Team upload.
++  * Import upstream version 4.25+dfsg.
++
++ -- gregor herrmann <gregoa@debian.org>  Wed, 29 Sep 2021 21:36:25 +0200
++
++libjson-validator-perl (4.24+dfsg-1) unstable; urgency=medium
++
++  * Team upload.
++  * Import upstream version 4.24+dfsg.
++  * Declare compliance with Debian Policy 4.6.0.
++  * Drop unneeded version constraints from (build) dependencies.
++
++ -- gregor herrmann <gregoa@debian.org>  Fri, 17 Sep 2021 03:16:03 +0200
++
++libjson-validator-perl (4.23+dfsg-1) unstable; urgency=medium
++
++  [ Debian Janitor ]
++  * Remove constraints unnecessary since stretch:
++    + Build-Depends-Indep: Drop versioned constraint on libcpanel-json-xs-perl
++      and libtest-simple-perl.
++    + libjson-validator-perl: Drop versioned constraint on
++      libcpanel-json-xs-perl in Recommends.
++  * Remove constraints unnecessary since stretch:
++    + Build-Depends-Indep: Drop versioned constraint on libmojolicious-perl and
++      libsereal-encoder-perl.
++
++  [ Andrius Merkys ]
++  * New upstream version 4.23+dfsg
++  * Dependency on libyaml-pp-perl has been replaced with libyaml-libyaml-perl
++    upstream.
++  * Dropping debian/source/lintian-overrides (used to ignore false-positive).
++
++ -- Andrius Merkys <merkys@debian.org>  Fri, 10 Sep 2021 06:54:53 -0400
++
++libjson-validator-perl (4.14+dfsg-1) unstable; urgency=medium
++
++  * Team upload.
++  * Import upstream version 4.14+dfsg.
++
++ -- gregor herrmann <gregoa@debian.org>  Sat, 27 Feb 2021 02:36:17 +0100
++
++libjson-validator-perl (4.13+dfsg-1) unstable; urgency=medium
++
++  * Team upload.
++  * Import upstream version 4.13+dfsg.
++
++ -- gregor herrmann <gregoa@debian.org>  Sat, 30 Jan 2021 19:15:48 +0100
++
++libjson-validator-perl (4.12+dfsg-1) unstable; urgency=medium
++
++  * Team upload.
++  * Import upstream version 4.12+dfsg.
++  * Declare compliance with Debian Policy 4.5.1.
++  * Bump debhelper-compat to 13.
++  * Add new tests to debian/tests/pkg-perl/smoke-skip
++    which need internet access.
++  * Update (build) dependencies.
++  * Add a lintian override (extra autopkgtests).
++
++ -- gregor herrmann <gregoa@debian.org>  Mon, 25 Jan 2021 20:18:32 +0100
++
++libjson-validator-perl (4.10+dfsg-2) unstable; urgency=medium
++
++  * Adding cache links for OpenAPI schemas (Closes: #964496).
++  * Adding Breaks+Replaces to deal with cache file shipped by sreview-web.
++  * Adding an autopkgtest to ensure that the cache symlinks are not broken.
++
++ -- Andrius Merkys <merkys@debian.org>  Wed, 09 Dec 2020 00:55:01 -0500
++
++libjson-validator-perl (4.10+dfsg-1) unstable; urgency=medium
++
++  * New upstream version 4.10+dfsg
++  * Updating debian/tests/pkg-perl/smoke-skip.
++  * Adding myself to the list of uploaders.
++
++ -- Andrius Merkys <merkys@debian.org>  Wed, 14 Oct 2020 01:50:48 -0400
++
++libjson-validator-perl (3.25+dfsg-1) unstable; urgency=medium
++
++  * Team upload.
++  * Import upstream version 3.25+dfsg.
++  * Update (build) dependencies.
++
++ -- gregor herrmann <gregoa@debian.org>  Sat, 28 Mar 2020 18:59:32 +0100
++
++libjson-validator-perl (3.24+dfsg-1) unstable; urgency=medium
++
++  * Team upload.
++  * Import upstream version 3.24+dfsg.
++  * Update (build) dependencies.
++  * Skip a new test which needs internet access.
++
++ -- gregor herrmann <gregoa@debian.org>  Sun, 08 Mar 2020 13:49:54 +0100
++
++libjson-validator-perl (3.23+dfsg-1) unstable; urgency=medium
++
++  * Team upload.
++  * Import upstream version 3.23+dfsg.
++  * Add new (build) dependency.
++
++ -- gregor herrmann <gregoa@debian.org>  Sun, 23 Feb 2020 12:41:22 +0100
++
++libjson-validator-perl (3.22+dfsg-1) unstable; urgency=medium
++
++  * Team upload.
++  * Import upstream version 3.22+dfsg.
++
++ -- gregor herrmann <gregoa@debian.org>  Sat, 15 Feb 2020 14:29:34 +0100
++
++libjson-validator-perl (3.21+dfsg-1) unstable; urgency=medium
++
++  * Team upload.
++  * Import upstream version 3.21+dfsg.
++  * Skip new test which also needs internet access.
++
++ -- gregor herrmann <gregoa@debian.org>  Fri, 14 Feb 2020 14:42:27 +0100
++
++libjson-validator-perl (3.19+dfsg-1) unstable; urgency=medium
++
++  * Team upload.
++  * Import upstream version 3.19+dfsg.
++
++ -- gregor herrmann <gregoa@debian.org>  Sat, 08 Feb 2020 15:15:49 +0100
++
++libjson-validator-perl (3.18+dfsg-1) unstable; urgency=medium
++
++  * Team upload.
++  * Import upstream version 3.18+dfsg.
++  * Replace tabs with spaces in debian/copyright.
++  * Declare compliance with Debian Policy 4.5.0.
++  * Annotate test-only build dependencies with <!nocheck>.
++
++ -- gregor herrmann <gregoa@debian.org>  Fri, 31 Jan 2020 17:48:28 +0100
++
++libjson-validator-perl (3.17+dfsg-1) unstable; urgency=medium
++
++  * New upstream version 3.17+dfsg
++  * d/control:
++    - Reformat (cme fix)
++  * d/u/metadata:
++    - Drop deprecated Contact, Name fields
++  * d/watch:
++    - Migrate to version 4 watch file format
++
++ -- Nick Morrott <nickm@debian.org>  Thu, 02 Jan 2020 20:05:19 +0000
++
++libjson-validator-perl (3.16+dfsg-1) unstable; urgency=medium
++
++  * New upstream version 3.16+dfsg
++  * d/control:
++    - Uploaders: use my new Debian email address
++    - Declare compliance with Debian Policy 4.4.1
++    - Add Rules-Requires-Root field
++
++ -- Nick Morrott <nickm@debian.org>  Mon, 04 Nov 2019 20:41:00 +0000
++
++libjson-validator-perl (3.14+dfsg-1) unstable; urgency=medium
++
++  * New upstream version 3.14+dfsg
++  * Bump debhelper compatibility version to 12
++  * Declare compliance with Debian Policy 4.4.0 (no changes)
++  * Refresh build and runtime dependencies
++  * Resync list of excluded tests with upstream test suite
++
++ -- Nick Morrott <knowledgejunkie@gmail.com>  Mon, 12 Aug 2019 03:26:22 +0100
++
++libjson-validator-perl (3.06+dfsg-1) unstable; urgency=medium
++
++  * Team upload.
++  * Import upstream version 3.06+dfsg.
++
++ -- gregor herrmann <gregoa@debian.org>  Fri, 15 Feb 2019 15:04:42 +0100
++
++libjson-validator-perl (3.05+dfsg-1) unstable; urgency=medium
++
++  [ gregor herrmann ]
++  * Update years of upstream copyright.
++  * Add debian/NEWS to mention (re)moved modules.
++
++  [ Nick Morrott ]
++  * New upstream version 3.05+dfsg
++  * Declare compliance with Debian Policy 4.3.0
++  * d/control: refresh (Build-)Dependencies
++  * d/control: reformat dependencies (no changes)
++  * d/control: add myself to Uploaders
++  * d/copyright: refresh Upstream-Contact details
++  * d/u/metadata: refresh upstream repository details
++  * d/NEWS: refresh details of (re)moved modules/breaking changes
++
++ -- Nick Morrott <knowledgejunkie@gmail.com>  Tue, 05 Feb 2019 11:50:05 +0000
++
++libjson-validator-perl (2.18+dfsg-1) unstable; urgency=medium
++
++  * Team upload.
++  * Import upstream version 2.18.
++  * debian/tests/pkg-perl/smoke-skip: delete removed tests.
++
++ -- gregor herrmann <gregoa@debian.org>  Sat, 17 Nov 2018 19:06:42 +0100
++
++libjson-validator-perl (2.13+dfsg-1) unstable; urgency=medium
++
++  * Team upload.
++  * Import upstream version 2.13.
++
++ -- gregor herrmann <gregoa@debian.org>  Sun, 21 Oct 2018 21:41:09 +0200
++
++libjson-validator-perl (2.12+dfsg-1) unstable; urgency=medium
++
++  * Team upload.
++  * Import upstream version 2.12.
++
++ -- gregor herrmann <gregoa@debian.org>  Fri, 05 Oct 2018 17:49:29 +0200
++
++libjson-validator-perl (2.11+dfsg-1) unstable; urgency=medium
++
++  * Team upload.
++  * Import upstream version 2.11.
++  * Declare compliance with Debian Policy 4.2.1.
++
++ -- gregor herrmann <gregoa@debian.org>  Sun, 30 Sep 2018 18:40:59 +0200
++
++libjson-validator-perl (2.08+dfsg-1) unstable; urgency=medium
++
++  * Team upload.
++  * New upstream release.
++  * Bump debhelper compatibility level to 11.
++  * Skip t/id-keyword-draft4.t and t/id-keyword-draft7.t tests.
++  * Update Recommends dependencies.
++
++ -- Andrius Merkys <andrius.merkys@gmail.com>  Mon, 04 Jun 2018 02:07:59 -0400
++
++libjson-validator-perl (2.07+dfsg-1) unstable; urgency=medium
++
++  * Team upload.
++  * Import upstream version 2.07.
++
++ -- gregor herrmann <gregoa@debian.org>  Sun, 06 May 2018 19:12:21 +0200
++
++libjson-validator-perl (2.06+dfsg-1) unstable; urgency=medium
++
++  * Team upload.
++
++  [ Salvatore Bonaccorso ]
++  * Update Vcs-* headers for switch to salsa.debian.org
++
++  [ gregor herrmann ]
++  * Import upstream version 2.06+dfsg.
++  * Update (build) dependencies.
++  * Declare compliance with Debian Policy 4.1.4.
++  * Skip t/bundle.t during build and autopkgtests. Needs internet access.
++
++ -- gregor herrmann <gregoa@debian.org>  Mon, 16 Apr 2018 19:42:15 +0200
++
++libjson-validator-perl (1.08+dfsg-1) unstable; urgency=medium
++
++  * Team upload.
++
++  [ Damyan Ivanov ]
++  * declare conformance with Policy 4.1.3 (no changes needed)
++
++  [ gregor herrmann ]
++  * Import upstream version 1.08+dfsg.
++  * Update debian/upstream/metadata.
++  * Bump debhelper compatibility level to 10.
++  * debian/rules: run tests without proxy and DNS queries.
++  * Skip more tests which fail without internet access.
++
++ -- gregor herrmann <gregoa@debian.org>  Sun, 14 Jan 2018 18:21:07 +0100
++
++libjson-validator-perl (1.07+dfsg-1) unstable; urgency=medium
++
++  * Team upload
++
++  * declare conformance with Policy 4.1.2 (no changes needed)
++  * New upstream version 1.07+dfsg
++  * skip t/spec/invalid-ref.t from autopkgtest smoke tester
++
++ -- Damyan Ivanov <dmn@debian.org>  Mon, 11 Dec 2017 20:54:09 +0000
++
++libjson-validator-perl (1.05+dfsg-1) unstable; urgency=medium
++
++  * Team upload
++
++  * New upstream version 1.05+dfsg
++  * declare conformance with Policy 4.1.1 (no changes needed)
++
++ -- Damyan Ivanov <dmn@debian.org>  Mon, 13 Nov 2017 20:43:21 +0000
++
++libjson-validator-perl (0.92+dfsg-1) unstable; urgency=medium
++
++  * Team upload.
++  * Import upstream version 0.92.
++  * Skip t/recursion.t during build and autopkgtest.
++    The test was extended with a part that needs internet access.
++
++ -- gregor herrmann <gregoa@debian.org>  Sat, 21 Jan 2017 19:11:35 +0100
++
++libjson-validator-perl (0.91+dfsg-1) unstable; urgency=medium
++
++  * Team upload.
++  * Import upstream version 0.91.
++  * Bump versioned (build) dependency on libmojolicious-perl.
++    Closes: #851347
++
++ -- gregor herrmann <gregoa@debian.org>  Sat, 14 Jan 2017 15:29:01 +0100
++
++libjson-validator-perl (0.90+dfsg-1) unstable; urgency=medium
++
++  * Team upload.
++  * Import upstream version 0.90.
++  * Skip a new tests during build and autopkgtests which fails without
++    internet access.
++  * Add libhash-multivalue-perl to Recommends. Needed by a new optional
++    module. Thanks to autopkgtest.
++
++ -- gregor herrmann <gregoa@debian.org>  Tue, 27 Dec 2016 19:32:13 +0100
++
++libjson-validator-perl (0.87+dfsg-1) unstable; urgency=medium
++
++  * Team upload.
++  * Import upstream version 0.87.
++  * Update build dependencies to enable more tests.
++
++ -- gregor herrmann <gregoa@debian.org>  Sun, 30 Oct 2016 15:57:50 +0100
++
++libjson-validator-perl (0.84+dfsg-1) unstable; urgency=medium
++
++  * Team upload.
++  * Import upstream version 0.84.
++
++ -- Nuno Carvalho <smash@cpan.org>  Thu, 25 Aug 2016 11:43:02 +0100
++
++libjson-validator-perl (0.80+dfsg-1) unstable; urgency=medium
++
++  * Import upstream version 0.80.
++  * debian/control: update my email in maintainer's field
++
++ -- Lucas Kanashiro <kanashiro@debian.org>  Wed, 03 Aug 2016 19:00:02 -0300
++
++libjson-validator-perl (0.75+dfsg-1) unstable; urgency=medium
++
++  * Team upload.
++  * Import upstream version 0.75.
++
++ -- gregor herrmann <gregoa@debian.org>  Sat, 02 Jul 2016 23:36:01 +0200
++
++libjson-validator-perl (0.74+dfsg-1) unstable; urgency=medium
++
++  * Team upload.
++  * debian/copyright: change Copyright-Format 1.0 URL to HTTPS.
++  * Switch repackaging framework to Files-Excluded method.
++  * Import upstream version 0.74.
++  * Drop spelling.patch, merged upstream.
++  * Add libcpanel-json-xs-perl to Recommends.
++  * Skip a test during build and autopkgtest.
++
++ -- gregor herrmann <gregoa@debian.org>  Tue, 28 Jun 2016 18:38:58 +0200
++
++libjson-validator-perl (0.67+dfsg-1) unstable; urgency=medium
++
++  * Team upload.
++  * debian/repack.local: make pattern to exclude files more specific.
++    We only want to delete the JSON/cache files, not the new perl module.
++  * Import upstream version 0.67+dfsg.
++  * Declare compliance with Debian Policy 3.9.8.
++  * Add a patch to fix a spelling mistake in the POD.
++
++ -- gregor herrmann <gregoa@debian.org>  Sun, 17 Apr 2016 16:46:27 +0200
++
++libjson-validator-perl (0.66+dfsg-1) unstable; urgency=medium
++
++  * Team upload.
++
++  [ Salvatore Bonaccorso ]
++  * debian/control: Use HTTPS transport protocol for Vcs-Git URI
++
++  [ gregor herrmann ]
++  * Import upstream version 0.66+dfsg.
++  * Declare compliance with Debian Policy 3.9.7.
++
++ -- gregor herrmann <gregoa@debian.org>  Mon, 15 Feb 2016 20:31:40 +0100
++
++libjson-validator-perl (0.65+dfsg-1) unstable; urgency=medium
++
++  * Team upload.
++  * Import upstream version 0.65+dfsg.
++
++ -- gregor herrmann <gregoa@debian.org>  Sat, 23 Jan 2016 01:05:44 +0100
++
++libjson-validator-perl (0.64+dfsg-1) unstable; urgency=medium
++
++  * Team upload.
++  * Import upstream version 0.64+dfsg.
++
++ -- gregor herrmann <gregoa@debian.org>  Mon, 21 Dec 2015 20:40:16 +0100
++
++libjson-validator-perl (0.63+dfsg-1) unstable; urgency=medium
++
++  * Team upload.
++  * Import upstream version 0.63+dfsg.
++  * Update (build) dependencies and long description.
++
++ -- gregor herrmann <gregoa@debian.org>  Sun, 29 Nov 2015 14:51:08 +0100
++
++libjson-validator-perl (0.61+dfsg-1) unstable; urgency=medium
++
++  * Imported Upstream version 0.61+dfsg
++
++ -- Lucas Kanashiro <kanashiro.duarte@gmail.com>  Tue, 17 Nov 2015 00:33:18 -0200
++
++libjson-validator-perl (0.60+dfsg-1) unstable; urgency=medium
++
++  * Team upload.
++  * Import upstream version 0.60+dfsg.
++  * Update Upstream-Contact in debian/copyright.
++
++ -- gregor herrmann <gregoa@debian.org>  Mon, 09 Nov 2015 19:11:21 +0100
++
++libjson-validator-perl (0.59+dfsg-1) unstable; urgency=low
++
++  * Team upload.
++  * New upstream release
++
++ -- Julian Maurice <jajm@jajm.org>  Wed, 28 Oct 2015 07:12:43 +0100
++
++libjson-validator-perl (0.52+dfsg-1) unstable; urgency=low
++
++  * Initial Release. (Closes: #798980)
++
++ -- Lucas Kanashiro <kanashiro.duarte@gmail.com>  Mon, 14 Sep 2015 13:15:49 -0300

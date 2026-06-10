@@ -1,0 +1,550 @@
+--- python-aiohttp.debianize/debian/changelog	2026-06-10 14:31:36.343274601 +0530
++++ python-aiohttp/debian/changelog	2026-06-10 14:31:55.412387751 +0530
+@@ -1,5 +1,545 @@
+-python-aiohttp (4.0.0~a1-1) UNRELEASED; urgency=low
++python-aiohttp (3.14.1-1) unstable; urgency=medium
++
++  * New upstream release.
++
++ -- Edward Betts <edward@4angle.com>  Mon, 08 Jun 2026 12:15:40 +0100
++
++python-aiohttp (3.14.0-1) unstable; urgency=medium
++
++  * New upstream release.
++      * Fix CVE-2026-47265 (Closes: #1138780)
++      * Fix CVE-2026-34993 (Closes: #1138781)
++  * Upstream added sphinxcontrib-mermaid, myst-parser and
++    pytest-timeout dependencies.
++  * Rebase patches.
++  * Skip another test failing during autopkgtest.
++
++ -- Edward Betts <edward@4angle.com>  Thu, 04 Jun 2026 11:24:23 +0100
++
++python-aiohttp (3.13.5-1) unstable; urgency=medium
++
++  * New upstream release.
++  * Skip more failing tests.
++  * Update Standards-Version.
++  * Update copyright year.
++  * Add python3-aiodns to Build-Depends.
++  * Add 'Built-Using: ${sphinxdoc:Built-Using}' to python-aiohttp-doc.
++
++ -- Edward Betts <edward@4angle.com>  Thu, 23 Apr 2026 14:50:55 +0100
++
++python-aiohttp (3.13.3-3) unstable; urgency=medium
++
++  * Skip two performance tests that are failing on riscv64.
++
++ -- Edward Betts <edward@4angle.com>  Thu, 08 Jan 2026 12:28:49 +0000
++
++python-aiohttp (3.13.3-2) unstable; urgency=medium
++
++  * Skip two tests that are failing during autopkgtest, "Too many open files".
++
++ -- Edward Betts <edward@4angle.com>  Tue, 06 Jan 2026 08:14:25 +0000
++
++python-aiohttp (3.13.3-1) unstable; urgency=medium
++
++  * New upstream release.
++  * Skip new failing tests.
++  * Remove 'Priority: optional', now the default.
++  * Update Standards-Version.
++
++ -- Edward Betts <edward@4angle.com>  Mon, 05 Jan 2026 22:25:10 +0000
++
++python-aiohttp (3.13.1-1) unstable; urgency=medium
++
++  * New upstream release.
++  * Skip three failing tests related to netrc authentication.
++  * Add Upstream-Contact to debian/copyright.
++
++ -- Edward Betts <edward@4angle.com>  Tue, 21 Oct 2025 06:02:40 +0100
++
++python-aiohttp (3.13.0-1) unstable; urgency=medium
++
++  * New upstream release.
++  * Add my name to Uploaders.
++  * Enable test suite, but skip tests that fail.
++  * Switch to Testsuite: autopkgtest-pkg-pybuild, so autopkgtest runs tests.
++  * Add Build-Depends for python3-pytest-cov and python3-pytest-xdist, needed
++    for tests.
++  * Add <!nocheck> to test dependencies.
++  * Add license information for vendor/llhttp to debian/copyright.
++  * Update debian/watch to format version 5.
++
++ -- Edward Betts <edward@4angle.com>  Thu, 09 Oct 2025 05:51:42 +0100
++
++python-aiohttp (3.12.15-1) unstable; urgency=medium
++
++  * Team upload.
++  * New upstream release.
++    - CVE-2025-53643: Fix request smuggling vulnerability (closes: #1109336).
++  * Remove 'Rules-Requires-Root: no', now the default.
++  * Refresh patches.
++
++ -- Edward Betts <edward@4angle.com>  Fri, 26 Sep 2025 19:15:20 +0000
++
++python-aiohttp (3.11.16-1) unstable; urgency=medium
++
++  * New upstream release
++
++ -- Piotr Ożarowski <piotr@debian.org>  Sat, 05 Apr 2025 14:44:31 +0200
++
++python-aiohttp (3.11.15-1) unstable; urgency=medium
++
++  * Team upload.
++  * New upstream release.
++  * Now requires a newer version of yarl.
++  * Update patches.
++  * Update Standards-Version.
++
++ -- Edward Betts <edward@4angle.com>  Tue, 01 Apr 2025 11:18:04 +0100
++
++python-aiohttp (3.10.11-1) unstable; urgency=medium
++
++  * Team upload.
++  * New upstream release:
++    - CVE-2024-52303: Fix system routes polluting the middleware cache
++      (closes: #1088108).
++    - CVE-2024-52304: Fix incorrect parsing of chunk extensions with the
++      pure Python parser (closes: #1088109).
++
++ -- Colin Watson <cjwatson@debian.org>  Mon, 30 Dec 2024 00:23:32 +0000
++
++python-aiohttp (3.10.10-2) unstable; urgency=medium
++
++  * Team upload.
++  * (Build-)depend on python3-yarl (>= 1.12.0) (closes: #1086658).
++
++ -- Colin Watson <cjwatson@debian.org>  Wed, 13 Nov 2024 14:31:21 +0000
++
++python-aiohttp (3.10.10-1) unstable; urgency=medium
++
++  * New upstream release
++
++ -- Piotr Ożarowski <piotr@debian.org>  Tue, 29 Oct 2024 12:17:05 +0100
++
++python-aiohttp (3.10.8-1) unstable; urgency=medium
++
++  * New upstream release
++
++ -- Piotr Ożarowski <piotr@debian.org>  Tue, 01 Oct 2024 16:05:56 +0200
++
++python-aiohttp (3.10.6-1) unstable; urgency=medium
++
++  * New upstream release
++
++ -- Piotr Ożarowski <piotr@debian.org>  Fri, 27 Sep 2024 16:27:09 +0200
++
++python-aiohttp (3.10.5-1) unstable; urgency=medium
++
++  * New upstream release
++
++ -- Piotr Ożarowski <piotr@debian.org>  Sat, 24 Aug 2024 09:30:57 +0200
++
++python-aiohttp (3.10.4-1) unstable; urgency=medium
++
++  * Team upload.
++  * New upstream release.
++
++ -- Colin Watson <cjwatson@debian.org>  Mon, 19 Aug 2024 11:36:35 +0100
++
++python-aiohttp (3.10.3-3) unstable; urgency=medium
++
++  * Team upload.
++  * Use local Sphinx inventories where available; ignore other missing
++    references.
++
++ -- Colin Watson <cjwatson@debian.org>  Sun, 18 Aug 2024 13:50:33 +0100
++
++python-aiohttp (3.10.3-2) unstable; urgency=medium
++
++  * Team upload.
++  * Upload to unstable.
++
++ -- Colin Watson <cjwatson@debian.org>  Thu, 15 Aug 2024 16:45:04 +0100
++
++python-aiohttp (3.10.3-1) experimental; urgency=medium
++
++  * Rework build to avoid needing to filter out *.egg-info from upstream.
++  * Fix documentation build.
++  * New upstream release.
++
++ -- Colin Watson <cjwatson@debian.org>  Wed, 14 Aug 2024 18:19:39 +0100
++
++python-aiohttp (3.10.1-1) experimental; urgency=medium
++
++  * Team upload.
++  * New upstream release.
++
++ -- Colin Watson <cjwatson@debian.org>  Mon, 05 Aug 2024 15:14:44 +0100
++
++python-aiohttp (3.10.0-1) experimental; urgency=medium
++
++  * Team upload.
++  * New upstream release.
++
++ -- Colin Watson <cjwatson@debian.org>  Sun, 04 Aug 2024 19:05:16 +0100
++
++python-aiohttp (3.9.5-1) unstable; urgency=medium
++
++  * Team upload.
++  * Use pybuild-plugin-pyproject.
++  * New upstream release:
++    - CVE-2024-23829: Python HTTP parser still overly lenient about
++      separators (closes: #1062708).
++    - CVE-2024-23334: aiohttp.web.static(follow_symlinks=True) is vulnerable
++      to directory traversal (closes: #1062709).
++    - CVE-2024-30251: DoS when trying to parse malformed POST requests
++      (closes: #1070364).
++    - CVE-2024-27306: XSS on index pages for static file handling (closes:
++      #1070665).
++  * Standards-Version: 3.7.0 (no changes required).
++
++ -- Colin Watson <cjwatson@debian.org>  Sun, 16 Jun 2024 12:39:52 +0100
++
++python-aiohttp (3.9.1-1) unstable; urgency=medium
++
++  * Team upload
++  * New upstream version 3.9.1
++    - CVE-2023-49081 (aiohttp's ClientSession is vulnerable to CRLF
++      injection via version) (Closes: #1057163)
++    - CVE-2023-49082 (aiohttp's ClientSession is vulnerable to CRLF
++      injection via method) (Closes: #1057164)
++    - Fix ftbfs on python3.12 (Closes: #1056036)
++  * Update debian/patches
++  * Update debian/copyright
++  * Clean built docs (Closes: #1047256)
++
++ -- Bo YU <tsu.yubo@gmail.com>  Wed, 13 Dec 2023 10:32:49 +0800
++
++python-aiohttp (3.8.6-1) unstable; urgency=medium
++
++  * New upstream release
++
++ -- Piotr Ożarowski <piotr@debian.org>  Sat, 14 Oct 2023 13:12:38 +0200
++
++python-aiohttp (3.8.5-1) unstable; urgency=medium
++
++  * New upstream release
++
++ -- Piotr Ożarowski <piotr@debian.org>  Sun, 20 Aug 2023 14:19:30 +0200
++
++python-aiohttp (3.8.4-1) unstable; urgency=medium
++
++  [ Debian Janitor ]
++  * Update standards version to 4.6.2, no changes needed.
++
++  [ Piotr Ożarowski ]
++  * New upstream release
++
++ -- Piotr Ożarowski <piotr@debian.org>  Thu, 16 Feb 2023 11:54:52 +0100
++
++python-aiohttp (3.8.3-1) unstable; urgency=medium
++
++  * New upstream release
++
++ -- Piotr Ożarowski <piotr@debian.org>  Mon, 31 Oct 2022 09:58:46 +0100
++
++python-aiohttp (3.8.1-5) unstable; urgency=medium
++
++  [ Debian Janitor ]
++  * Remove constraints unnecessary since buster (oldstable):
++    + Build-Depends: Drop versioned constraint on python3-all-dev and
++      python3-yarl.
++    + python3-aiohttp: Drop versioned constraint on python3-yarl in Depends.
++
++ -- Jelmer Vernooĳ <jelmer@debian.org>  Fri, 14 Oct 2022 11:57:30 +0100
++
++python-aiohttp (3.8.1-4) unstable; urgency=high
++
++  * Team upload.
++  * debian/control: Add versioned dependency (Closes: #1001642):
++    + python3-async-timeout (>= 4.0.1)
++  * debian/py3dist-overrides: Add "idna_ssl python3-idna-ssl" line
++    to suppress build error raised by newer dh_python3.
++
++ -- Boyuan Yang <byang@debian.org>  Sun, 19 Dec 2021 01:05:53 -0500
++
++python-aiohttp (3.8.1-3) unstable; urgency=medium
++
++  * Add python3-charset-normalizer to (Build-)Depends (closes: 1000848)
++
++ -- Piotr Ożarowski <piotr@debian.org>  Tue, 30 Nov 2021 13:58:24 +0100
++
++python-aiohttp (3.8.1-2) unstable; urgency=medium
++
++  * New upstream release (closes: 1000680)
++  * docs: temporarily remove news (sphinxcontrib.towncrier is not yet packaged)
++
++ -- Piotr Ożarowski <piotr@debian.org>  Sat, 27 Nov 2021 17:20:40 +0100
++
++python-aiohttp (3.7.4-2) unstable; urgency=medium
++
++  * Team upload.
++
++  [ Diego M. Rodriguez ]
++  * d/control: add sphinx dependencies to doc package (Closes: #990652)
++
++  [ Debian Janitor ]
++  * Apply multi-arch hints.
++    + python-aiohttp-doc: Add Multi-Arch: foreign.
++  * Bump debhelper from old 12 to 13.
++
++  [ Boyuan Yang ]
++  * debian/: Drop manual -dbg package. (Closes: #994345)
++  * debian/control: Bump Standards-Version to 4.6.0.
++
++ -- Boyuan Yang <byang@debian.org>  Tue, 16 Nov 2021 12:03:24 -0500
++
++python-aiohttp (3.7.4-1) unstable; urgency=high
++
++  * Team upload
++  * New upstream version 3.7.4
++  * Fixes only an openredirect issue in normalize_path_middleware middleware
++    (CVE-2021-21330) and is thus suitable for bullseye.
++
++ -- Raphaël Hertzog <hertzog@debian.org>  Fri, 26 Feb 2021 09:39:16 +0100
++
++python-aiohttp (3.7.3-2) unstable; urgency=medium
++
++  * No change rebuild.
++
++ -- Andrej Shadura <andrewsh@debian.org>  Fri, 26 Feb 2021 09:11:31 +0100
++
++python-aiohttp (3.7.3-1) unstable; urgency=medium
++
++  [ Emmanuel Arias ]
++  * Add python-aiohttp-doc package (Closes: #950331)
++    - Add d/python-aiohttp-doc* files.
++    - d/rules: add override_dh_auto_build for build documentation.
++    - d/control: add python3-sphinxcontrib.blockdiag depends for build
++      documentation.
++
++  [ Ondřej Nový ]
++  * d/control: Update Maintainer field with new Debian Python Team
++    contact address.
++  * d/control: Update Vcs-* fields with new Debian Python Team Salsa
++    layout.
++
++  [ Debian Janitor ]
++  * Set field Upstream-Name in debian/copyright.
++  * Remove obsolete field Name from debian/upstream/metadata (already present in
++    machine-readable debian/copyright).
++
++  [ Piotr Ożarowski ]
++  * New upstream release
++  * Patch documentation to remove "fork me on Github" button (privacy breach)
++  * Standards-Version bumped to 4.5.1 (no changes needed)
++  * Update debian/copyright to mention vendor/http-parser files
++
++ -- Piotr Ożarowski <piotr@debian.org>  Fri, 15 Jan 2021 20:52:09 +0100
++
++python-aiohttp (3.6.2-1) unstable; urgency=medium
++
++  [ Ondřej Nový ]
++  * Bump Standards-Version to 4.4.1.
++
++  [ William Grzybowski ]
++  * New upstream release
++  * d/control:
++    - Add Rules-Requires-Root: no
++    - Add sphinxdoc to package Depends
++    - Update Standards-Version to 4.4.1
++  * d/patches: add patch 0002 to add shebang to examples
++
++ -- William Grzybowski <william@grzy.org>  Wed, 23 Oct 2019 09:51:01 -0300
++
++python-aiohttp (3.6.1-1) unstable; urgency=medium
++
++  * New upstream release
++
++ -- William Grzybowski <william@grzy.org>  Mon, 23 Sep 2019 16:51:58 -0300
++
++python-aiohttp (3.6.0-1) unstable; urgency=medium
++
++  * New upstream release
++  * d/watch: use version 4 and ignore alpha/beta/rc
++
++ -- William Grzybowski <william@grzy.org>  Tue, 17 Sep 2019 14:38:53 -0300
++
++python-aiohttp (3.5.4-1) unstable; urgency=medium
++
++  [ William Grzybowski ]
++  * New upstream version 3.5.4
++  * Add debian/salsa-ci.yml
++  * d/control: add myself to Uploaders
++  * d/control: update debhelper to version 12
++  * d/copyright: adjust upstream years and remove debian/idna_ssl.py
++  * d/python3-aiohttp.pyremove: also remove *.pxd and *.pxi
++  * d/rules: run dwz only in the debug package
++  * Remove header files using pyremove and not rules
++
++  [ Ondřej Nový ]
++  * Use debhelper-compat instead of debian/compat.
++  * Bump Standards-Version to 4.4.0.
++  * d/control: Remove ancient X-Python3-Version field.
++
++ -- William Grzybowski <william@grzy.org>  Fri, 26 Jul 2019 16:17:15 -0300
++
++python-aiohttp (3.5.1-1) unstable; urgency=medium
++
++  * New upstream release
++  * Remove idna_ssl patch - no longer needed in Python >= 3.7
++  * Standards-Version bumped to 4.3.0 (no changes needed)
++
++ -- Piotr Ożarowski <piotr@debian.org>  Mon, 31 Dec 2018 18:15:56 +0100
++
++python-aiohttp (3.4.4-1~exp1) experimental; urgency=medium
++
++  * Team upload
++  * New upstream release (Closes: #901010)
++  * debian/control:
++    - New standards version 4.2.1 - no changes
++    - Recommends libjs-jquery
++  * debian/gbp.conf: Enable pristine-tar build
++  * debian/patches:
++    - Refresh patches
++    - debian/patches/0002-Use-local-install-of-jquery.patch
++      (fixes lintian)
++  * debian/rules:
++    - Do not delete aiohttp/_*.c in override_dh_auto_clean
++    - Delete _find_header.h from binary packages
++
++ -- Ruben Undheim <ruben.undheim@gmail.com>  Fri, 21 Dec 2018 18:32:14 +0000
++
++python-aiohttp (3.1.3-1) unstable; urgency=medium
++
++  * Team upload.
++  * New upstream release
++  * d/copyright: Fix Format URL to correct one
++  * d/rules: Remove trailing whitespaces
++  * Bump debhelper compat level to 11
++  * Standards-Version is 4.2.0 now (no changes needed)
++  * Enable autopkgtest-pkg-python testsuite
++  * Install examples
++  * Really bump required Python 3 version to 3.5.3
++  * Enable all hardening
++  * Add upstream metadata
++  * d/copyright: Change Source to new location
++  * Convert git repository from git-dpm to gbp layout
++  * Require python3-yarl at least 1.0 (Closes: #897432)
++
++ -- Ondřej Nový <onovy@debian.org>  Tue, 14 Aug 2018 14:53:26 +0200
++
++python-aiohttp (3.0.1-1) unstable; urgency=medium
++
++  [ Ondřej Nový ]
++  * d/control: Set Vcs-* to salsa.debian.org
++
++  [ Piotr Ożarowski ]
++  * New upstream release
++    - minimum required Python 3 version bumped to 3.5.3
++  * bundle idna_ssl module until Python 3.7 is the one supported in Debian
++
++ -- Piotr Ożarowski <piotr@debian.org>  Wed, 14 Feb 2018 12:59:09 +0100
++
++python-aiohttp (2.3.6-1) unstable; urgency=medium
++
++  * New upstream release
++  * Standards-Version bumped to 4.1.2 (d/copyright format URL switch to HTTPS)
++
++ -- Piotr Ożarowski <piotr@debian.org>  Wed, 20 Dec 2017 12:01:51 +0100
++
++python-aiohttp (2.2.3-2) unstable; urgency=medium
++
++  * Team upload.
++  * d/rules: clean generated C files. Closes: #880352.
++  * d/control: bump Standards-Version to 4.1.1.
++  * d/watch: switch to HTTPS.
++
++ -- Vincent Bernat <bernat@debian.org>  Sun, 26 Nov 2017 19:06:47 +0100
++
++python-aiohttp (2.2.3-1) unstable; urgency=medium
++
++  * New upstream release
++
++ -- Piotr Ożarowski <piotr@debian.org>  Sun, 09 Jul 2017 22:53:16 +0200
++
++python-aiohttp (2.2.0-1) unstable; urgency=medium
++
++  * New upstream release
++  * Standards-Version bumped to 4.0.0 (no changes needed)
++
++ -- Piotr Ożarowski <piotr@debian.org>  Fri, 23 Jun 2017 19:50:46 +0200
++
++python-aiohttp (1.2.0-1) unstable; urgency=medium
++
++  * New upstream release
++  * debian/compat changed to 10 (this change also closes: 845178 thanks to
++    dh_autoreconf)
++
++ -- Piotr Ożarowski <piotr@debian.org>  Wed, 21 Dec 2016 13:30:27 +0100
++
++python-aiohttp (1.1.5-1) unstable; urgency=medium
++
++  * New upstream release
++
++ -- Piotr Ożarowski <piotr@debian.org>  Fri, 18 Nov 2016 19:58:04 +0100
++
++python-aiohttp (1.1.2-1) unstable; urgency=medium
++
++  * New upstream release
++    - works with new multidict (closes: 835299)
++    - decompresses HTTP bodies (closes: 833254)
++  * tests disabled for now (see comment in debian/rules)
++    closes: 830567, 839478
++
++ -- Piotr Ożarowski <piotr@debian.org>  Tue, 08 Nov 2016 22:58:56 +0100
++
++python-aiohttp (0.22.4-1) unstable; urgency=medium
++
++  [ Ondřej Nový ]
++  * Fixed VCS URL (https)
++
++  [ Piotr Ożarowski ]
++  * New upstream release
++    - Add dependency on python3-multidict
++  * Backport changes in test/test_connector.py from upstream master branch
++  * Standards-Version bumped to 3.9.8 (no changes needed)
++
++ -- Piotr Ożarowski <piotr@debian.org>  Thu, 28 Jul 2016 23:32:19 +0200
++
++python-aiohttp (0.20.2-1) unstable; urgency=medium
++
++  * New upstream release.
++  * Replace python3-nose with python3-pytest in Build-Depends
++    and remove override_dh_auto_test from debian/rules;
++    remove no longer needed override_dh_auto_test in debian/rules
++  * Remove .cache directory in clean target
++
++ -- Piotr Ożarowski <piotr@debian.org>  Thu, 28 Jan 2016 21:42:23 +0100
++
++python-aiohttp (0.17.4-1) unstable; urgency=medium
++
++  * New upstream release
++
++ -- Piotr Ożarowski <piotr@debian.org>  Tue, 29 Sep 2015 23:12:42 +0200
++
++python-aiohttp (0.17.2-1) unstable; urgency=medium
++
++  * Team upload.
++  * New upstream release.
++  * d/patches/no-gunicorn.patch: Deleted; we have python3-gunicorn now.
++  * d/control: Add python3-gunicorn to Build-Depends.
++  * d/rules: override_dh_auto_test until pybuild bug #749506 is fixed.
++
++ -- Barry Warsaw <barry@debian.org>  Thu, 13 Aug 2015 16:12:29 -0400
++
++python-aiohttp (0.15.3-1) unstable; urgency=medium
++
++  * Update to 0.15.3 upstream release.
++
++ -- Tianon Gravi <admwiggin@gmail.com>  Sun, 03 May 2015 06:44:18 +0000
++
++python-aiohttp (0.15.1-1) unstable; urgency=medium
+ 
+   * Initial release.
+ 
+- -- Anu-Ra-g <nayakanurag078@gmail.com>  Wed, 10 Jun 2026 14:31:36 +0530
++ -- Tianon Gravi <admwiggin@gmail.com>  Sat, 04 Apr 2015 09:07:00 -0600

@@ -1,0 +1,13 @@
+--- breezy.debianize/debian/upstream/metadata	2026-06-10 14:37:51.752819287 +0530
++++ breezy/debian/upstream/metadata	2026-06-10 14:38:43.368652827 +0530
+@@ -1,7 +1,5 @@
+----
+-Name: breezy
+-Contact: Breezy Developers <team@breezy-vcs.org>
+-Bug-Database: https://github.com/breezy-team/breezy/issues
++Bug-Database: https://bugs.launchpad.net/brz
++Bug-Submit: https://bugs.launchpad.net/brz/+filebug
+ Repository: https://github.com/breezy-team/breezy.git
+ Repository-Browse: https://github.com/breezy-team/breezy
+-Security-Contact: https://github.com/breezy-team/breezy/tree/HEAD/SECURITY.md
++Security-Contact: https://github.com/breezy-team/breezy/blob/main/SECURITY.md

@@ -1,0 +1,102 @@
+--- opkssh.debianize/debian/changelog	2026-06-10 14:47:22.028206889 +0530
++++ opkssh/debian/changelog	2026-06-10 14:47:38.608923776 +0530
+@@ -1,5 +1,96 @@
+-golang-github-openpubkey-opkssh (0.14.0-1) UNRELEASED; urgency=low
++opkssh (0.14.0-2) unstable; urgency=medium
+ 
+-  * Initial release.
++  * Ignore tests that fails in testing
+ 
+- -- Anu-Ra-g <nayakanurag078@gmail.com>  Wed, 10 Jun 2026 14:47:22 +0530
++ -- Simon Josefsson <simon@josefsson.org>  Tue, 09 Jun 2026 22:15:25 +0200
++
++opkssh (0.14.0-1) unstable; urgency=medium
++
++  * Standards-Version: 4.7.4
++  * Drop go-jwx-v3 hack (fixed upstream)
++  * Bump upstream copyright years
++  * Add man page
++  * Don't ignore TestDetermineProvider (fixed upstream)
++  * Drop --builddirectory=_build --buildsystem=golang
++
++ -- Simon Josefsson <simon@josefsson.org>  Tue, 09 Jun 2026 14:31:52 +0200
++
++opkssh (0.13.0-1) unstable; urgency=medium
++
++  * Team upload
++
++  [ Mathias Gibbens ]
++  * Add patch for building with golang-github-lestrrat-go-jwx v3
++  * Update Build-Depends and Depends in d/control
++  * Update d/rules to include another needed test file
++
++  [ Simon Josefsson ]
++  * Bump openpubkey/openpubkey version
++  * Use gbp sign-tags and upstream-vcs-tag
++
++ -- Mathias Gibbens <gibmat@debian.org>  Sat, 21 Feb 2026 17:26:22 +0000
++
++opkssh (0.10.0-3) unstable; urgency=medium
++
++  * Fix --version (Closes: #1124812)
++  * Bump debian/* copyright years
++
++ -- Simon Josefsson <simon@josefsson.org>  Thu, 05 Feb 2026 22:36:19 +0100
++
++opkssh (0.10.0-2) unstable; urgency=medium
++
++  * De-vendor golang-github-thediveo-enumflag-dev
++  * Fix Salsa CI failues
++
++ -- Simon Josefsson <simon@josefsson.org>  Thu, 05 Feb 2026 22:12:43 +0100
++
++opkssh (0.10.0-1) unstable; urgency=medium
++
++  * Use watch v5.
++  * New upstream version 0.10.0
++    - Fix JWS sig bypass CVE-2025-3757 (Closes: #1105741)
++  * Drop Rules-Requires-Root: no
++  * Standards-Version: 4.7.3
++  * Modernize Salsa CI
++  * Drop upstreamed patch
++  * Vendor thediveo/enumflags pending NEW
++  * Ignore failing TestDetermineProvider test
++  * Drop Priority: optional
++  * Bump golang-github-openpubkey-openpubkey-dev to >0.21
++  * Fix d/copyright typo
++
++ -- Simon Josefsson <simon@josefsson.org>  Wed, 31 Dec 2025 21:33:17 +0100
++
++opkssh (0.8.0-2) unstable; urgency=medium
++
++  * salsa-ci: Build on 32-bit archs.
++  * Patch constants for 32-bit archs.
++
++ -- Simon Josefsson <simon@josefsson.org>  Sun, 17 Aug 2025 23:37:34 +0200
++
++opkssh (0.8.0-1) unstable; urgency=medium
++
++  * Use gbp.conf debian-branch=debian/latest.
++  * New upstream version 0.6.1
++  * Add new B-D/D on golang-github-kballard-go-shellquote-dev.
++  * Install default-client-config.yml.
++  * Require modern golang-github-openpubkey-openpubkey.
++  * Add Static-Built-Using.
++  * New upstream version 0.8.0
++  * Refresh DH_GOLANG_INSTALL_EXTRA path for new upstream.
++
++ -- Simon Josefsson <simon@josefsson.org>  Sun, 17 Aug 2025 00:58:07 +0200
++
++opkssh (0.4.0-1) unstable; urgency=medium
++
++  * d/salsa-ci.yml: Drop local apt builddeps.
++  * New upstream version 0.4.0
++  * New B-D/D on golang-github-spf13-cobra-dev.
++
++ -- Simon Josefsson <simon@josefsson.org>  Sun, 06 Apr 2025 11:24:35 +0200
++
++opkssh (0.3.0-1) unstable; urgency=medium
++
++  * Initial release (Closes: #1101310)
++
++ -- Simon Josefsson <simon@josefsson.org>  Tue, 01 Apr 2025 11:09:07 +0200

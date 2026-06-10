@@ -1,0 +1,18 @@
+No upstream repository specified, using upstream source in /home/anurag/WORKSPACE/debianize-CMP/aethersdr.debianize/
+Switching to packaging branch debian/main.
+Using default unshare session
+Creating UpstreamBranchSource for enhanced upstream metadata handling
+Successfully created UpstreamBranchSource
+Using upstream version: 26.6.2
+Creating unshare session from cached Debian sid image
+Using cached Debian sid image from: /home/anurag/.cache/ognibuild/images/debian-sid-amd64.tar.gz
+Using cached Debian sid image
+Created upstream branch pointing to revision git-v1:ce2437ae6d3dd602be2d2d59fd90c365342e4803
+Created upstream tag: upstream/26.6.2
+Multiple candidates for dependency [DebianDependency("cmake"), DebianDependency("cmake")]
+Breaking tie between [["cmake", "cmake"]] to "cmake" based on build-depends count
+
+thread 'main' (38061) panicked at /home/anurag/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ognibuild-0.2.12/src/dependencies/vague.rs:85:54:
+called `Result::unwrap()` on an `Err` value: ParseError("Invalid version string: 3.10) puts its option(")
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+Reset tree after failure

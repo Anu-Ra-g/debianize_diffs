@@ -1,0 +1,62 @@
+--- python-mitogen.debianize/debian/control	2026-06-10 14:32:33.606131556 +0530
++++ python-mitogen/debian/control	2026-06-10 14:32:37.329708858 +0530
+@@ -1,13 +1,52 @@
+ Source: python-mitogen
+ Section: python
+-Maintainer: Anu-Ra-g <nayakanurag078@gmail.com>
+-Build-Depends: debhelper-compat (= 13), dh-sequence-python3, python3-all, python3-setuptools
+-Standards-Version: 4.7.4.1
+-Vcs-Browser: https://github.com/mitogen-hq/mitogen,branch=debian%2Fmain
+-Vcs-Git: https://github.com/mitogen-hq/mitogen,branch=debian%2Fmain.git
+-Rules-Requires-Root: no
++Maintainer: Debian Python Team <team+python@tracker.debian.org>
++Uploaders:
++ Antoine Beaupré <anarcat@debian.org>,
++ Emmanuel Arias <eamanu@debian.org>,
++ Richard Laager <rlaager@debian.org>,
++ Stefano Rivera <stefanor@debian.org>,
++ Lee Garrett <debian@rocketjump.eu>,
++Build-Depends:
++ debhelper-compat (= 13),
++ dh-sequence-python3,
++ python3-all,
++ python3-psutil <!nocheck>,
++ python3-setuptools
++Standards-Version: 4.7.4
++Homepage: https://github.com/mitogen-hq/mitogen/
++Vcs-Browser: https://salsa.debian.org/python-team/packages/python-mitogen
++Vcs-Git: https://salsa.debian.org/python-team/packages/python-mitogen.git
+ Testsuite: autopkgtest-pkg-python
+ 
+ Package: python3-mitogen
+ Architecture: all
+-Depends: ${python3:Depends}, ${misc:Depends}
++Multi-Arch: foreign
++Depends: ${misc:Depends}, ${python3:Depends}
++Recommends: ${python3:Recommends}
++Suggests: ${python3:Suggests}
++Description: Library for writing distributed self-replicating programs
++ Mitogen is a Python library for writing distributed self-replicating programs.
++ .
++ There is no requirement for installing packages, copying files around, writing
++ shell snippets, upfront configuration, or providing any secondary link to a
++ remote machine aside from an SSH connection. Due to its origins for use in
++ managing potentially damaged infrastructure, the remote machine need not even
++ have free disk space or a writeable filesystem.
++
++Package: ansible-mitogen
++Architecture: all
++Depends:
++ ansible-core (>= 2.19.0~beta2),
++ python3-mitogen (= ${source:Version}),
++ ${misc:Depends},
++ ${python3:Depends}
++Recommends: ${python3:Recommends}
++Suggests: ${python3:Suggests}
++Description: Fast connection strategy for Ansible
++ Mitogen for Ansible is a completely redesigned UNIX connection layer and
++ module runtime for Ansible. Requiring minimal configuration changes, it
++ updates Ansible’s slow and wasteful shell-centric implementation with
++ pure-Python equivalents, invoked via highly efficient remote procedure calls
++ to persistent interpreters tunnelled over SSH. No changes are required to
++ target hosts.

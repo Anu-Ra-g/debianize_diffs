@@ -1,0 +1,67 @@
+--- dulwich.debianize/debian/control	2026-06-10 14:27:43.388752573 +0530
++++ dulwich/debian/control	2026-06-10 14:27:51.852634827 +0530
+@@ -1,14 +1,55 @@
+-Source: python-dulwich
++Source: dulwich
+ Section: python
+-Maintainer: Anu-Ra-g <nayakanurag078@gmail.com>
+-Build-Depends: debhelper-compat (= 13), dh-sequence-python3, python3 (>= 3.10), python3-all, python3-setuptools (>= 77.0.0), python3-typing-extensions (>= 4.6.0), python3-urllib3 (>= 2.2.2)
+-Standards-Version: 4.7.4.1
+-Vcs-Browser: https://github.com/jelmer/dulwich,branch=debian%2Fmain
+-Vcs-Git: https://github.com/jelmer/dulwich,branch=debian%2Fmain.git
++Priority: optional
++Maintainer: Debian Python Team <team+python@tracker.debian.org>
++Uploaders: Jelmer Vernooĳ <jelmer@debian.org>
+ Homepage: https://www.dulwich.io/
++Build-Depends: debhelper-compat (= 13),
++               dh-python,
++               git,
++               gnupg,
++               librust-pyo3-dev,
++               openssh-client <!nocheck>,
++               python3-all-dev,
++               python3-fastimport,
++               python3-gpg,
++               python3-merge3 <!nocheck>,
++               python3-sshsig <!nocheck>,
++               python3-urllib3 (>= 1.25),
++               python3-setuptools,
++               python3-setuptools-rust,
++               rustc <!nocheck>,
++               cargo:native,
++               librust-memchr-2+default-dev,
++               librust-pyo3+default-dev (<< 0.29-~~),
++               librust-pyo3+default-dev (>= 0.25),
++               librust-pyo3+extension-module-dev (<< 0.29-~~),
++               librust-pyo3+extension-module-dev (>= 0.25),
++               librust-similar-2+default-dev,
++               libstd-rust-dev
++Standards-Version: 4.7.4
++Vcs-Git: https://salsa.debian.org/python-team/packages/dulwich.git
++Vcs-Browser: https://salsa.debian.org/python-team/packages/dulwich
+ Rules-Requires-Root: no
+-Testsuite: autopkgtest-pkg-python
+ 
+ Package: python3-dulwich
+-Architecture: all
+-Depends: ${python3:Depends}, ${misc:Depends}
++Architecture: any
++Depends: python3-urllib3 (>= 1.25),
++         ${misc:Depends},
++         ${python3:Depends},
++         ${shlibs:Depends}
++Breaks: python3-breezy (<< 3.0.0~bzr7268),
++        python3-poetry (<< 2.3.0)
++Recommends: python3-fastimport, python3-sshsig
++Suggests: python3-gpg
++Description: Python Git library - Python3 module
++ Dulwich is a Python implementation of the file formats and protocols
++ used by the Git version control system. It can currently read from and write
++ to existing Git repositories and implements the protocol for pushing and
++ receiving packs from remote servers.
++ .
++ All functionality is available in pure Python, but for improved performance
++ replacements of some modules written in C are also available. This package
++ includes the high performance versions.
++ .
++ This package contains the module built for Python version 3.x.

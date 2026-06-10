@@ -1,0 +1,8 @@
+No upstream repository specified, using upstream source in /home/anurag/WORKSPACE/debianize-CMP/rabbitmq-java-client.debianize/
+Switching to packaging branch debian/main.
+Using default unshare session
+
+thread 'main' (38549) panicked at /home/anurag/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/upstream-ontologist-0.3.18/src/readme.rs:293:39:
+called `Result::unwrap()` on an `Err` value: RelativeUrlWithoutBase
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+Reset tree after failure

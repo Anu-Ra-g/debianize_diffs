@@ -1,0 +1,125 @@
+--- torchwood.debianize/debian/control	2026-06-10 14:51:25.404622389 +0530
++++ torchwood/debian/control	2026-06-10 14:51:28.460940718 +0530
+@@ -1,15 +1,111 @@
+-Source: golang-github-FiloSottile-torchwood
+-Section: devel
+-Maintainer: Anu-Ra-g <nayakanurag078@gmail.com>
+-Build-Depends: debhelper-compat (= 13), dh-sequence-golang, golang-filippo-age-dev, golang-filippo-edwards25519-dev, golang-filippo-hpke-dev, golang-github-cznic-mathutil-dev, golang-github-dustin-go-humanize-dev, golang-github-go-logr-logr-dev, golang-github-go-logr-stdr-dev, golang-github-google-uuid-dev, golang-github-gtank-ristretto255-dev, golang-github-hashicorp-golang-lru-v2-dev, golang-github-klauspost-cpuid-dev, golang-github-mattn-go-isatty-dev, golang-github-remyoudompheng-bigfft-dev, golang-github-rogpeppe-go-internal-dev, golang-github-transparency-dev-formats-dev, golang-github-transparency-dev-merkle-dev, golang-github-transparency-dev-tessera-dev, golang-github-zombiezen-go-sqlite-dev, golang-go (>= 1.25.0), golang-golang-x-crypto-dev, golang-golang-x-exp-dev, golang-golang-x-mod-dev, golang-golang-x-net-dev, golang-golang-x-sync-dev, golang-golang-x-sys-dev, golang-golang-x-term-dev, golang-golang-x-text-dev, golang-golang-x-tools-dev, golang-lukechampine-blake3-dev, golang-modernc-libc-dev, golang-modernc-memory-dev, golang-modernc-sqlite-dev, golang-opentelemetry-otel-dev, golang-sigsum-sigsum-go-dev
+-Standards-Version: 4.7.4.1
+-Vcs-Browser: https://github.com/FiloSottile/torchwood,branch=debian%2Fmain
+-Vcs-Git: https://github.com/FiloSottile/torchwood,branch=debian%2Fmain.git
+-Rules-Requires-Root: no
++Source: torchwood
++Section: golang
++Maintainer: Debian Go Packaging Team <team+pkg-go@tracker.debian.org>
++Uploaders:
++ Simon Josefsson <simon@josefsson.org>,
++Build-Depends:
++ debhelper-compat (= 13),
++ dh-sequence-golang,
++ dpkg-build-api (= 1),
++ golang-any,
++ golang-filippo-age-dev,
++ golang-github-cheggaaa-pb.v3-dev,
++ golang-github-gtank-ristretto255-dev,
++ golang-github-rogpeppe-go-internal-dev,
++ golang-github-transparency-dev-tessera-dev,
++ golang-github-zombiezen-go-sqlite-dev,
++ golang-golang-x-crypto-dev,
++ golang-golang-x-mod-dev,
++ golang-golang-x-net-dev,
++ golang-golang-x-sync-dev,
++ golang-lukechampine-blake3-dev,
++ golang-sigsum-sigsum-go-dev,
+ Testsuite: autopkgtest-pkg-go
+-XS-Go-Import-Path: github.com/FiloSottile/torchwood
++Standards-Version: 4.7.4
++Vcs-Browser: https://salsa.debian.org/go-team/packages/torchwood
++Vcs-Git: https://salsa.debian.org/go-team/packages/torchwood.git
++Homepage: https://github.com/FiloSottile/torchwood
++XS-Go-Import-Path: filippo.io/torchwood
+ 
+-Package: golang-github-FiloSottile-torchwood-dev
++Package: torchwood
++Section: admin
++Architecture: any
++Breaks:
++ litetlog,
++Replaces:
++ litetlog,
++Conflicts:
++ litetlog,
++Depends:
++ ${misc:Depends},
++ ${shlibs:Depends},
++Static-Built-Using: ${misc:Static-Built-Using}
++Description: collection of open source transparency log tools (program)
++ The Torchwood repository is a collection of open-source tooling for
++ transparency logs.
++ .
++  * litewitness (/cmd/litewitness/README.md) is a cosigning witness
++   backed
++    by SQLite and ssh-agent.It implements c2sp.org/tlog-witness
++    (https://c2sp.org/tlog-witness).
++  * litebastion (/cmd/litebastion/README.md) (and filippo.
++    io/torchwood/bastion (https://pkg.go.dev/filippo.io/torchwood/bastion))
++    is a public-service
++    reverse proxy.It implements c2sp.org/https-bastion (https://c2sp.
++    org/https-bastion).
++  * filippo.io/torchwood (https://pkg.go.dev/filippo.io/torchwood)
++    implements a tlog client (https://pkg.go.dev/filippo.
++    io/torchwood#Client) and various
++    c2sp.org/signed-note (https://c2sp.org/signed-note), c2sp.org/tlog-
++    cosignature (https://c2sp.org/tlog-cosignature),
++    c2sp.org/tlog-checkpoint (https://c2sp.org/tlog-checkpoint), and c2sp.
++    org/tlog-tiles (https://c2sp.org/tlog-tiles) functions,
++    including extensions to the golang.org/x/mod/sumdb/tlog (https://pkg.go.
++    dev/golang.org/x/mod/sumdb/tlog) and
++    golang.org/x/mod/sumdb/note (https://pkg.go.dev/golang.
++    org/x/mod/sumdb/note) packages.
++ .
++ This package contains the binaries.
++
++Package: golang-filippo-torchwood-dev
+ Architecture: all
+ Multi-Arch: foreign
+-Depends: ${misc:Depends}
++Depends:
++ golang-filippo-age-dev,
++ golang-github-cheggaaa-pb.v3-dev,
++ golang-github-gtank-ristretto255-dev,
++ golang-github-transparency-dev-tessera-dev,
++ golang-github-zombiezen-go-sqlite-dev,
++ golang-golang-x-crypto-dev,
++ golang-golang-x-mod-dev,
++ golang-golang-x-net-dev,
++ golang-golang-x-sync-dev,
++ golang-lukechampine-blake3-dev,
++ golang-sigsum-sigsum-go-dev,
++ ${misc:Depends},
++Description: collection of open source transparency log tools (library)
++ The Torchwood repository is a collection of open-source tooling for
++ transparency logs.
++ .
++  * litewitness (/cmd/litewitness/README.md) is a cosigning witness
++   backed
++    by SQLite and ssh-agent.It implements c2sp.org/tlog-witness
++    (https://c2sp.org/tlog-witness).
++  * litebastion (/cmd/litebastion/README.md) (and filippo.
++    io/torchwood/bastion (https://pkg.go.dev/filippo.io/torchwood/bastion))
++    is a public-service
++    reverse proxy.It implements c2sp.org/https-bastion (https://c2sp.
++    org/https-bastion).
++  * filippo.io/torchwood (https://pkg.go.dev/filippo.io/torchwood)
++    implements a tlog client (https://pkg.go.dev/filippo.
++    io/torchwood#Client) and various
++    c2sp.org/signed-note (https://c2sp.org/signed-note), c2sp.org/tlog-
++    cosignature (https://c2sp.org/tlog-cosignature),
++    c2sp.org/tlog-checkpoint (https://c2sp.org/tlog-checkpoint), and c2sp.
++    org/tlog-tiles (https://c2sp.org/tlog-tiles) functions,
++    including extensions to the golang.org/x/mod/sumdb/tlog (https://pkg.go.
++    dev/golang.org/x/mod/sumdb/tlog) and
++    golang.org/x/mod/sumdb/note (https://pkg.go.dev/golang.
++    org/x/mod/sumdb/note) packages.
++ .
++ This package contains the Go development library.

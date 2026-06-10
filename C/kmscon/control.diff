@@ -1,0 +1,72 @@
+--- kmscon.debianize/debian/control	2026-06-10 15:10:08.618160540 +0530
++++ kmscon/debian/control	2026-06-10 15:10:13.709990117 +0530
+@@ -1,11 +1,60 @@
+-Source: kmscon.debianize
+-Maintainer: Anu-Ra-g <nayakanurag078@gmail.com>
+-Build-Depends: debhelper-compat (= 13)
+-Standards-Version: 4.7.4.1
+-Vcs-Browser: https://github.com/kmscon/kmscon,branch=debian%2Fmain
+-Vcs-Git: https://github.com/kmscon/kmscon,branch=debian%2Fmain.git
+-Rules-Requires-Root: no
++Source: kmscon
++Maintainer: Boyuan Yang <byang@debian.org>
++Uploaders:
++ Victor Westerhuis <victor@westerhu.is>,
++Section: utils
++Build-Depends:
++ check,
++ debhelper-compat (= 13),
++ dh-exec,
++ dh-sequence-builtusing,
++ docbook-xml <!nodoc>,
++ docbook-xsl <!nodoc>,
++ libfontconfig-dev,
++ libfreetype-dev,
++ libdrm-dev,
++ libegl-dev,
++ libgbm-dev,
++ libgles-dev,
++ libpango1.0-dev,
++ libseat-dev,
++ libsystemd-dev,
++ libtsm-dev (>= 4.5.0),
++ libudev-dev,
++ libxkbcommon-dev,
++ meson (>= 1.1),
++ pkgconf,
++ python3:any,
++ systemd-dev,
++ unifont,
++ xsltproc <!nodoc>,
++ zlib1g-dev,
++Standards-Version: 4.7.4
++Vcs-Browser: https://salsa.debian.org/debian/kmscon
++Vcs-Git: https://salsa.debian.org/debian/kmscon.git
++Homepage: https://github.com/kmscon/kmscon
++Description: Simple terminal emulator based on Kernel Mode Setting
++ kmscon is a system console for Linux. It does not depend on any
++ graphics-server on your system (like X.org), but instead provides
++ a raw console layer that can  be used independently.
++ It can replace the Linux kernel console entirely but was designed to
++ work well side-by-side, too.
++ Even though initially targeted at providing internationalization to
++ the system-console, it has grown into a fully modularized console
++ layer including features like multi-head support, internationalized
++ font rendering, XKB-compatible keyboard handling,
++ hardware-accelerated graphics access and more.
+ 
+-Package: kmscon.debianize
++Package: kmscon
+ Architecture: any
+-Depends: ${misc:Depends}
++Multi-Arch: foreign
++Depends:
++ ncurses-term (>= 6.6+20260608~),
++ init-system-helpers (>> 1.65~),
++ login,
++ ${misc:Depends},
++ ${shlibs:Depends},
++Built-Using:
++ ${dh-builtusing:unifont},
++Description: ${source:Synopsis}
++ ${source:Extended-Description}

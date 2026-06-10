@@ -1,0 +1,11 @@
+--- pipx.debianize/debian/upstream/metadata	2026-06-10 14:29:15.519583554 +0530
++++ pipx/debian/upstream/metadata	2026-06-10 14:29:19.235065287 +0530
+@@ -1,7 +1,5 @@
+ ---
+-Name: pipx
+ Bug-Database: https://github.com/pypa/pipx/issues
+-Documentation: https://pipx.pypa.io
++Bug-Submit: https://github.com/pypa/pipx/issues/new
+ Repository: https://github.com/pypa/pipx.git
+ Repository-Browse: https://github.com/pypa/pipx
+-Security-Contact: https://github.com/pypa/pipx/tree/HEAD/.github/SECURITY.md

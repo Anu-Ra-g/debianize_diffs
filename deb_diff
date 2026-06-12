@@ -29,6 +29,9 @@ tail -n +2 "$CSV_FILE" | while IFS=',' read -r ID NAME REPO LANG; do
     (
         cd "$WORKDIR"
         debianize
+	echo
+	
+	wrap-and-sort -va
     ) 2>&1 | tee "$OUTDIR/${NAME}.debianize.log"
 
     debcheckout "$NAME" || true
